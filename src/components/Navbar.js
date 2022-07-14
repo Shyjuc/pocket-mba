@@ -22,7 +22,7 @@ function Navbar() {
           <li>
           <Link to="/founder-kit" className='nav-link scrollto' onClick={closeMobileMenu}>Founder's Kit</Link>
           </li>
-          <li className="dropdown"><a href="#"><span>Pocket MBA</span> <i className="bi bi-chevron-down"></i></a>
+          <li className="dropdown"><a href='/Home'><span>Pocket MBA</span> <i className="bi bi-chevron-down"></i></a>
             <ul>
               <li>
               <Link to="/community" className='nav-link scrollto' onClick={closeMobileMenu}>Community</Link>
