@@ -25,7 +25,7 @@ function Pricing() {
                 <li className="na"><i className="bx bx-x"></i> Marketing Posts(100+)</li>
                 <li className="na"><i className="bx bx-x"></i> Check Lists</li>
               </ul>
-              <a href="#" className="buy-btn">Download Now</a>
+              <a href="/Home" className="buy-btn">Download Now</a>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ function Pricing() {
                 <li><i className="bx bx-check"></i> Social Media Calender</li>
                 <li><i className="bx bx-check"></i> E-Books</li>
               </ul>
-              <a href="#" className="buy-btn">Download Now</a>
+              <a href="/Home" className="buy-btn">Download Now</a>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ function Pricing() {
                 <li className="na"><i className="bx bx-x"></i> Marketing Posts(100+)</li>
                 <li className="na"><i className="bx bx-x"></i> Check Lists</li>
               </ul>
-              <a href="#" className="buy-btn">Download now</a>
+              <a href="/Home" className="buy-btn">Download now</a>
             </div>
           </div>
 

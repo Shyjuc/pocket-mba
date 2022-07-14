@@ -26,7 +26,7 @@ function FounderKit() {
               <li><i className="ri-check-double-line"></i> Prepare for all level of funding opportunities from Seed, Govt grants, VC Meeting and participation in accelaraion programs and startup meetups.</li>
               <li><i className="ri-check-double-line"></i> Manage your 1 year social media activities hiring ads, offer messages, festival wishes with ready-to-use creatives</li>
             </ul>
-            <a href="#" className="btn-learn-more">Learn More</a>
+            <a href="/founder-kit" className="btn-learn-more">Learn More</a>
           </div>
         </div>
 

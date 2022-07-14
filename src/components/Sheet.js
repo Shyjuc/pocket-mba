@@ -42,7 +42,7 @@ function Sheet() {
         </div>
 
         <p style={{ textAlign:'center' }} >
-        <a href="#" id="pitch-more" className="btn-learn-more">View all</a>
+        <a href="/Home" id="pitch-more" className="btn-learn-more">View all</a>
         </p>
         
       </div>
