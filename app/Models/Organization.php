@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Organization extends Model
+{
+    use HasFactory;
+    protected $fillable = ['name','owner_id'];
+
+    public function owner()
+    {
+    	return $this->belongsTo('App\Models\User');
+    }
+
+    public function company_status()
+    {
+        return $this->belongsTo('App\Models\Option','company_status_id');
+    }
+    
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Option','status_id');
+    } 
+    
+    public function nature_of_the_business()
+    {
+    	return $this->belongsTo('App\Models\Option', 'nature_of_the_business_id');
+    } 
+
+    public function shareholder()
+    {
+    	
+        return $this->hasMany('App\Models\Shareholder', 'organization_id');
+        
+    }
+
+    public function personnels()
+    {
+    	
+        return $this->hasMany('App\Models\Personnel', 'organization_id');
+        
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Contact', 'organization_id'); 
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'organization_user');
+    }
+
+   
+
+
+}
