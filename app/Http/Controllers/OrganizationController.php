@@ -81,10 +81,15 @@ class OrganizationController extends Controller
      * @param  \App\Models\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Organization $organization)
+    public function show($id)
     {
         //
-         dd($organization);
+        $organization = Organization::find($id); // your food instance with id 12
+        //echo $food->name; //12
+         //dd($organization);
+         return view('organization.show')->with(compact('organization'));
+         //return view('organization.show',compact('organization'));
+         
     }
 
 
