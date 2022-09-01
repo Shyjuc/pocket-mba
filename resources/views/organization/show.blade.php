@@ -22,6 +22,12 @@
                             </x-flash>
                         @endif
                     <div class="p-6 bg-white border-b border-gray-200">
+                     <div class="
+                        flex flex-wrap
+                        rounded-sm
+                        ">
+                     <img src="{{ $organization->media_path }}" class="rounded-md object-cover h-50 w-50">
+                    </div>
                        <h1>{{ $organization->name }}<br/>
                         <small>Owner ID : {{ $organization->owner_id }}</small>
                        </h1>

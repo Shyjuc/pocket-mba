@@ -26,7 +26,7 @@
                                 <td class="p-2 ">{{ $organization->id }}</td>
                                 <td class="p-2 ">{{ $organization->name }}</td>
                                 <td class="p-2 ">{{ $organization->owner->email }}</td>
-                                <td class="p-2 ">{{ $organization->status->label }}</td>
+                                
                                 <td class="p-2 ">
                                     @if( $organization->uuid)
                                     <a class="blue" href="{{route('kyc', $organization->uuid )}}" >{{ $organization->uuid }}</a>

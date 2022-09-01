@@ -66,6 +66,12 @@
                     
                 </div>
 
+                <div class="custom-file">
+                    <x-label for="company_logo" :value="__('Company Logo')" />
+                    <input type="file" name="company_logo" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="company_logo">
+                    
+                </div>
+
                 <div class="flex items-center justify-left mt-4">
                     <x-button>
                         {{ __('Submit') }}
