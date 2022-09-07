@@ -26,10 +26,10 @@
                         flex flex-wrap
                         rounded-sm
                         ">
-                     <img src="{{ $organization->media_path }}" class="rounded-md object-cover h-50 w-50">
+                     <img src="<?php echo asset("$companies->media_path")?>" width="50" height="50" class="rounded-md object-cover h-50 w-50">
                     </div>
-                       <h1>{{ $organization->name }}<br/>
-                        <small>Owner ID : {{ $organization->owner_id }}</small>
+                       <h1>{{ $companies->name }}<br/>
+                        <small>Owner ID : {{ $companies->owner_id }}</small>
                        </h1>
                     </div>
                     <div class="p-6 bg-white border-b border-gray-200">
@@ -80,16 +80,9 @@
          veritatis.
       </div>
       <div x-show="openTab === 3" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         Officia nisi, doloribus nulla cumque molestias corporis eaque
-         harum vero! Quas sit odit optio debitis nulla quisquam,
-         dolorum quaerat animi iusto quod. <br>
+         Trade License : <a href="">Download</a> <br>
          <br>
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-         Suscipit mollitia nam eligendi reprehenderit reiciendis saepe
-         laboriosam maiores voluptas. Quo, culpa amet fugiat ipsam sed
-         quod hic, veritatis ducimus recusandae repellat quasi eaque,
-         suscipit praesentium totam?
+         Vat Certificate : <a href="">Download</a>
       </div>
       <div x-show="openTab === 4" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
          Lorem ipsum dolor sit amet, consectetur adipisicing elit.

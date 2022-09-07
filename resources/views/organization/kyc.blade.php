@@ -11,7 +11,7 @@
         
         <div class="max-w-7xl mx-auto">
             
-            <form method="POST" action="{{ route('kycstore',$organization->uuid) }}">
+            <form method="POST" enctype="multipart/form-data" action="{{ route('kycstore',$organization->uuid) }}">
                 @csrf
                 @method('PATCH')
                 @if(isset($message) && !empty($message))
@@ -67,10 +67,18 @@
                 </div>
 
                 <div class="custom-file">
+                    <x-label for="vat_certificate" :value="__('VAT Certificate')" />
+                    <input type="file" name="vat_certificate" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="vat_certificate">
+                    
+                </div>
+                
+
+                <div class="custom-file">
                     <x-label for="company_logo" :value="__('Company Logo')" />
                     <input type="file" name="company_logo" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="company_logo">
                     
                 </div>
+
 
                 <div class="flex items-center justify-left mt-4">
                     <x-button>

@@ -48,4 +48,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Organization::class, 'organization_user');
     }
+
+    //Add for avatar...
+    public function avatar()
+    {
+        return $this->hasOne(File::class, 'file');
+    }
 }

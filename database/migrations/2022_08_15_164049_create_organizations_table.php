@@ -62,6 +62,8 @@ return new class extends Migration
 
             $table->foreign('company_status_id')->references('id')->on('options');
 		    $table->foreign('nature_of_the_business_id')->references('id')->on('options');
+
+            $table->integer('image_id')->nullable();
         });
     }
 

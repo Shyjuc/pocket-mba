@@ -10,9 +10,13 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <x-rich-text-trix-styles />
+
+        <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
 
     </head>
     <body class="font-sans antialiased">

@@ -11,7 +11,8 @@ trait Media {
         if($file) {
 
             $fileName   = time().rand(1000,9999) . $file->getClientOriginalName();
-            Storage::disk('public')->put($path . $fileName, File::get($file));
+            //Storage::disk('public')->put($path . $fileName, File::get($file));
+            Storage::disk(env('STORAGE_PATH'))->put($path . $fileName, File::get($file));
             $file_name  = $file->getClientOriginalName();
             $file_type  = $file->getClientOriginalExtension();
             $filePath   = 'storage/'.$path . $fileName;

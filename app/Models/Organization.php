@@ -55,7 +55,17 @@ class Organization extends Model
         return $this->belongsToMany(User::class, 'organization_user');
     }
 
+    //
+    public function vat_certificate()
+    {
+        return $this->hasOne(File::class, 'organization_user');
+    }
    
+    //Add for trade license
+    public function trade_license()
+    {
+        return $this->hasOne(File::class, 'organization_user');
+    }
 
 
 }

@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('organizations', function (Blueprint $table) {
-            $table->integer('gravatar');
+        Schema::create('images', function (Blueprint $table) {
+            $table->id();
+            $table->string('media_name');
+            $table->string('media_path');
+            $table->string('media_size');
+            $table->string('media_type');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('organizations', function (Blueprint $table) {
-            $table->dropColumn('gravatar');
-        });
+        Schema::dropIfExists('images');
     }
 };

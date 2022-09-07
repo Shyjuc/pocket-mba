@@ -12,6 +12,8 @@ use App\Http\Resources\OrganizationResource;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
 use App\Services\OrganizationService;
+use App\Services\ImageService;
+use App\Services\FileService;
 
 class OrganizationController extends Controller
 {
@@ -69,21 +71,15 @@ class OrganizationController extends Controller
      * @param  \App\Models\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function show(Organization $organization)
+    public function show(Organization $company)
     {
-        //
-       // $organization = Organization::find($id); // your food instance with id 12
-        //echo $food->name; //12
-         dd($organization->id);
+         //dd($company->id);
 
-         //$post = Organization::orderBy('created_at','desc')->join('gravatars', 'organizations.gravatar', '=', 'gravatars.id')
-               //->get(['organizations.*', 'gravatars.media_path']);
-
-         $post = Organization::where('id',$organization->id)->join('gravatars', 'organizations.gravatar', '=', 'gravatars.id')
-         ->get(['organizations.*', 'gravatars.media_path']);
+         $companies = Organization::where('organizations.id',$company->id)->join('images', 'organizations.image_id', '=', 'images.id')
+         ->first(['organizations.*', 'images.media_path']);
                      
 
-         return view('organization.show')->with(compact('post'));
+         return view('organization.show')->with(compact('companies'));
          //return view('organization.show',compact('organization'));
          
     }
@@ -125,20 +121,22 @@ class OrganizationController extends Controller
      * @param  \App\Models\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function kycstore($uuid, $request, OrganizationService $OrganizationService)
+    public function kycstore($uuid, Request $request, OrganizationService $OrganizationService, ImageService $ImageService, FileService $FileService)
     {
-        dd($uuid);
+        //dd($uuid);
         // $request->validate([
         //     'trade_license' => 'required|mimes:png,jpeg,pdf|max:2048'
         //     ]);
 
-        $data = $OrganizationService->storekycOrganization($uuid,$request);
+        $data = $OrganizationService->storekycOrganization($uuid, $request, $ImageService, $FileService);
 
        
-        $message = ['type'=>'success', 'content'=>'Details are submitted successfully'];
+        //$message = ['type'=>'success', 'content'=>'Details are submitted successfully'];
         //return view('organization.kyc')->with(compact('organization','countries', 'message'));
-
-        return view('organization.kyc')->with($data);
+        $countries       =  (object) Helper::cList();   
+        $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();    
+        //return view('organization.kyc')->with($data);
+        return view('organization.kyc')->with(compact('organization','countries','data'));
     }
 
     /**

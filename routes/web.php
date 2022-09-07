@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\ProposalController;
+use App\Http\Controllers\OrganizationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
         'companies' => OrganizationController::class
     ]);
 });
+
 
 Route::get('/kyc/{uuid}', [OrganizationController::class, 'kyc'])->name('kyc');
 Route::patch('/kyc/{uuid}', [OrganizationController::class, 'kycstore'])->name('kycstore');

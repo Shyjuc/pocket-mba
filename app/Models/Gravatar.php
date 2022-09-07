@@ -9,5 +9,7 @@ class Gravatar extends Model
 {
     use HasFactory;
 
+    protected $table = "images";
+
     protected $guarded = [];
 }
