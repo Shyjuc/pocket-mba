@@ -7,13 +7,13 @@ function FounderKit() {
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>What is FounderKit 2.0?</h2>
+          <h2>Pitch Kit 2.0</h2>
         </div>
 
         <div className="row content">
           <div className="col-lg-6">
             <p>
-              Founder's Kit 1.0 is a collection of Ready-to-use Pitch Deck Templates, business presentations, startup management spreadsheets, reference checklists and marketing creatives. 
+            Pitch Kit 2.0 is a powerful reference framework created for startups. It includes collection of Ready-to-use Pitch Deck Templates, business presentations, startup management spreadsheets, reference checklists and marketing creatives. 
             </p>
             <p>
               It helps you to work around your startup at various stages from ideation, product launch to funding. Then manage your planning stage activities with the help of checklists and industry reports

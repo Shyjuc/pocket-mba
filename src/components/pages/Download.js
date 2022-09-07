@@ -1,20 +1,18 @@
 import React from 'react'
 import HeroSection from '../HeroSection'
-import CtaCommunity from '../CtaCommunity'
+import Sheet from '../Sheet'
 import Footer from '../Footer'
-import Community from '../Community'
 
-function Founder() {
+function Download() {
   return (
     <>
          <HeroSection />
          <main id="main">
-          <Community />
-          <CtaCommunity />
+          <Sheet />
           <Footer />
          </main>
     </>
   )
 }
 
-export default Founder
+export default Download

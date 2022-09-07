@@ -2,14 +2,14 @@ import React from 'react'
 import HeroSection from '../HeroSection'
 import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
-import Community from '../Community'
+import Introinfo from '../Introinfo'
 
-function Founder() {
+function Intro() {
   return (
     <>
          <HeroSection />
          <main id="main">
-          <Community />
+          <Introinfo />
           <CtaCommunity />
           <Footer />
          </main>
@@ -17,4 +17,4 @@ function Founder() {
   )
 }
 
-export default Founder
+export default Intro

@@ -9,6 +9,7 @@ function SheetItem(props) {
                 <h4>{props.title}</h4>
                 <span>{props.purpose}</span>
                 <p>{props.detail}</p>
+                <a href="/Home" className="download-btn"><i aria-hidden="true" class="download icon"></i> Download</a>
               </div>
             </div>
           </div>

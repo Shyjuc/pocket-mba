@@ -4,7 +4,7 @@ import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
 import Community from '../Community'
 
-function Founder() {
+function Commune() {
   return (
     <>
          <HeroSection />
@@ -17,4 +17,4 @@ function Founder() {
   )
 }
 
-export default Founder
+export default Commune

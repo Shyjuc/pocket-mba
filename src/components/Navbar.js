@@ -20,20 +20,19 @@ function Navbar() {
           <Link to="/" className='nav-link scrollto active' onClick={closeMobileMenu}>Home</Link>
           </li>
           <li>
-          <Link to="/founder-kit" className='nav-link scrollto' onClick={closeMobileMenu}>Founder's Kit</Link>
-          </li>
-          <li className="dropdown"><a href='/Home'><span>Pocket MBA</span> <i className="bi bi-chevron-down"></i></a>
-            <ul>
-              <li>
-              <Link to="/community" className='nav-link scrollto' onClick={closeMobileMenu}>Community</Link>
-              </li>
-              <li>
-              <Link to="/contact" className='nav-link scrollto' onClick={closeMobileMenu}>Contact</Link>
-              </li>
-            </ul>
+          <Link to="/brand-package" className='nav-link scrollto' onClick={closeMobileMenu}>Brand Kit</Link>
           </li>
           <li>
-          <Link to="/kit" className='getstarted scrollto'>Get Started</Link>
+          <Link to="/community" className='nav-link scrollto' onClick={closeMobileMenu}>Community</Link>
+          </li>
+          <li>
+          <Link to="/download" className='nav-link scrollto' onClick={closeMobileMenu}>Download</Link>
+          </li>
+          <li>
+          <Link to="/docs" className='nav-link scrollto' onClick={closeMobileMenu}>Docs</Link>
+          </li>
+          <li>
+          <Link to="/consult" className='getstarted scrollto'>Consult Us</Link>
           </li>
         </ul>
         <i onClick={handleClick} className="bi bi-list mobile-nav-toggle"></i>

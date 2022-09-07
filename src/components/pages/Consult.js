@@ -1,15 +1,15 @@
 import React from 'react'
-import HeroSection from '../HeroSection'
+import HeroConsult from '../HeroConsult'
 import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
-import Community from '../Community'
+import ContactForm from '../ContactForm';
 
 function Founder() {
   return (
     <>
-         <HeroSection />
+         <HeroConsult />
          <main id="main">
-          <Community />
+          <ContactForm />
           <CtaCommunity />
           <Footer />
          </main>

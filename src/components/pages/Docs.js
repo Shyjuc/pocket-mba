@@ -1,27 +1,25 @@
 import React from 'react'
 import FounderKit from '../FounderKit'
-import HeroFounder from '../HeroFounder'
+import HeroDocs from '../HeroDocs'
 import Pitch from '../Pitch'
 import Sheet from '../Sheet'
 import Faq from '../Faq'
 import WhySection from '../WhySection'
 import Pricing from '../Pricing'
 import Footer from '../Footer'
+import Article from '../Articles'
 
-function Home() {
+function Docs() {
   return (
     <>
-         <HeroFounder />
+         <HeroDocs />
          <main id="main">
-          <FounderKit />
-          <Pitch />
+          <Article />
           <Faq />
-          <WhySection />
-          <Pricing />
           <Footer />
          </main>
     </>
   )
 }
 
-export default Home
+export default Docs

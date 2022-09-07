@@ -1,4 +1,5 @@
 import React from 'react'
+import PricingItems from './PricingItems'
 
 function Pricing() {
   return (
@@ -11,57 +12,60 @@ function Pricing() {
         </div>
 
         <div className="row">
-
-          <div className="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div className="box">
-              <h3>Founder's Kit 1.0</h3>
-              <h4><sup>₹</sup>599</h4>
-              <ul>
-                <li><i className="bx bx-check"></i> Pitch Deck set(5)</li>
-                <li><i className="bx bx-check"></i> Sales Worksheet(3)</li>
-                <li><i className="bx bx-check"></i> Social Media Calender</li>
-                <li><i className="bx bx-check"></i> E-Books</li>
-                <li className="na"><i className="bx bx-x"></i> Marketing Work Sheets(4)</li>
-                <li className="na"><i className="bx bx-x"></i> Marketing Posts(100+)</li>
-                <li className="na"><i className="bx bx-x"></i> Check Lists</li>
-              </ul>
-              <a href="/Home" className="buy-btn">Download Now</a>
-            </div>
-          </div>
-
-          <div className="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div className="box featured">
-              <h3>Founder's Kit 2.0</h3>
-              <h4><sup>₹</sup>1,999</h4>
-              <ul>
-                <li><i className="bx bx-check"></i> Pitch Deck set(10)</li>
-                <li><i className="bx bx-check"></i> Marketing Work Sheets(4)</li>
-                <li><i className="bx bx-check"></i> Marketing Posts(100+)</li>
-                <li><i className="bx bx-check"></i> Sales Worksheet(3)</li>
-                <li><i className="bx bx-check"></i> Check Lists</li>
-                <li><i className="bx bx-check"></i> Social Media Calender</li>
-                <li><i className="bx bx-check"></i> E-Books</li>
-              </ul>
-              <a href="/Home" className="buy-btn">Download Now</a>
-            </div>
-          </div>
-
-          <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div className="box">
-              <h3>Free Pitch Deck Kit</h3>
-              <h4><sup>₹</sup>0</h4>
-              <ul>
-                <li><i className="bx bx-check"></i> Pitch Deck set(3)</li>
-                <li><i className="bx bx-check"></i> E-Books</li>
-                <li className="na"><i className="bx bx-x"></i> Sales Worksheet(3)</li>
-                <li className="na"><i className="bx bx-x"></i> Social Media Calender</li>
-                <li className="na"><i className="bx bx-x"></i> Marketing Work Sheets(4)</li>
-                <li className="na"><i className="bx bx-x"></i> Marketing Posts(100+)</li>
-                <li className="na"><i className="bx bx-x"></i> Check Lists</li>
-              </ul>
-              <a href="/Home" className="buy-btn">Download now</a>
-            </div>
-          </div>
+          <PricingItems
+            img='assets/img/ed-tech.png'
+            title = "Ed-Tech Brand Package"
+            amount = "2499"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
+          <PricingItems
+            img='assets/img/health-tech.png'
+            title = "Healthcare Brand Package"
+            amount = "2499"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
+          <PricingItems
+            img='assets/img/consultant-kit.png'
+            title = "Consultant's Brand Package"
+            amount = "2499"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
+          <PricingItems
+            img='assets/img/hiring_ads.png'
+            title = "Hiring Ads Kit for Startups"
+            amount = "999"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
+          <PricingItems
+            img='assets/img/sales_offers.png'
+            title = "Sales Offers"
+            amount = "999"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
+          <PricingItems
+            img='assets/img/wishes_kit.png'
+            title = "Festival wishes"
+            amount = "999"
+            info1 = "Social Media Posters"
+            info2 = "Marketing Camaigns"
+            info3 = "Hiring Ads"
+            info4 = "Promo Ofers"
+          />
 
         </div>
 

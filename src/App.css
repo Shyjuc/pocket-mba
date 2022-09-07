@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+.download-btn 
+{
+    display: inline-block;
+    padding: 5px 25px;
+    border-radius: 50px;
+    color: #47b2e4;
+    transition: none;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+    border: 1px solid #47b2e4;
+    margin-top:10px;
+}
+
+.download-btn:hover 
+{
+    background-color: #47b2e4;
+    color: #ffffff;
+    border: 1px solid #47b2e4;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
