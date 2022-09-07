@@ -1,6 +1,5 @@
 import React from 'react'
 import HeroFounder from '../HeroFounder'
-import Faq from '../Faq'
 import Footer from '../Footer'
 import Pricing from '../Pricing'
 
