@@ -69,6 +69,13 @@ class OrganizationService
         $companies->trading_address = $request->trading_address;
         $companies->company_number = $request->company_number;
         $companies->authority_of_registration_number = $request->authority_of_registration_number;
+        
+        $companies->bank_name= $request->bank_name;
+        $companies->bank_account_number= $request->bank_account_number;
+        $companies->bank_address= $request->bank_address;
+        $companies->bank_swift_code= $request->bank_swift_code;
+        $companies->nature_of_the_business_id= $request->nature_of_business;
+        
         $companies->country_of_incorporation= $request->country_of_incorporation;
 
         $submitted_status = Option::where('name','submitted')->first();

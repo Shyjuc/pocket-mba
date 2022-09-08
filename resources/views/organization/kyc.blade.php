@@ -52,6 +52,35 @@
                 </div>
 
                 <div>
+                    <x-label for="bank_name" :value="__('Bank Name')" />
+                    <x-input id="bank_name" class="block mt-1 w-full" type="text" name="bank_name" value="{{ $organization->bank_name }}"  required />
+                </div>
+
+                <div>
+                    <x-label for="bank_account_number" :value="__('Bank Account Number')" />
+                    <x-input id="bank_account_number" class="block mt-1 w-full" type="text" name="bank_account_number" value="{{ $organization->bank_account_number }}"  required />
+                </div>
+
+                <div>
+                    <x-label for="bank_address" :value="__('Bank Address')" />
+                    <x-input id="bank_address" class="block mt-1 w-full" type="text" name="bank_address" value="{{ $organization->bank_address }}"  required />
+                </div>
+
+                <div>
+                    <x-label for="bank_swift_code" :value="__('Bank Swift code')" />
+                    <x-input id="bank_swift_code" class="block mt-1 w-full" type="text" name="bank_swift_code" value="{{ $organization->bank_swift_code }}"  required />
+                </div>
+
+                <div>
+                    <x-label for="nature_of_business" :value="__('Nature of Business')" />
+                    <select class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="nature_of_business" id="nature_of_business">
+                        @foreach($businessnature as $key=>$businessModel)
+                        <option @if($key==$businessModel->id) selected @endif value="{{$key}}">{{$businessModel->label}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div>
                     <x-label for="country_of_incorporation" :value="__('Country of Incorporation')" />
                     <select class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="country_of_incorporation" id="country_of_incorporation">
                         @foreach($countries as $key=>$country)

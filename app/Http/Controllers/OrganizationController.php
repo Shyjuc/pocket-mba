@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use App\Models\User;
+use App\Models\Option;
 use App\Helpers\Helper; 
 use Illuminate\Support\Str;
 use App\Models\Organization;
 use Illuminate\Http\Request;
+use App\Services\FileService;
+use App\Services\ImageService;
+use Illuminate\Support\Facades\DB;
+use App\Services\OrganizationService;
 use App\Http\Resources\OrganizationResource;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
-use App\Services\OrganizationService;
-use App\Services\ImageService;
-use App\Services\FileService;
 
 class OrganizationController extends Controller
 {
@@ -109,8 +111,15 @@ class OrganizationController extends Controller
          
         $countries       =  (object) Helper::cList();   
         $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
+
+        $categories = Option::all(['id','name']);
+        $businessnature = DB::table('option_optiongroup')
+        ->leftjoin('options', 'option_optiongroup.option_id', '=', 'options.id')
+        ->leftjoin('optiongroups', 'option_optiongroup.optiongroup_id', '=', 'optiongroups.id')
+        ->where('optiongroups.id', 4)
+        ->get(['options.id', 'options.label']);
         
-        return view('organization.kyc')->with(compact('organization','countries'));
+        return view('organization.kyc')->with(compact('organization','countries','businessnature'));
    
      }
 
@@ -134,9 +143,14 @@ class OrganizationController extends Controller
         //$message = ['type'=>'success', 'content'=>'Details are submitted successfully'];
         //return view('organization.kyc')->with(compact('organization','countries', 'message'));
         $countries       =  (object) Helper::cList();   
-        $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();    
+        $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
+        $businessnature = DB::table('option_optiongroup')
+        ->leftjoin('options', 'option_optiongroup.option_id', '=', 'options.id')
+        ->leftjoin('optiongroups', 'option_optiongroup.optiongroup_id', '=', 'optiongroups.id')
+        ->where('optiongroups.id', 4)
+        ->get(['options.id', 'options.label']);    
         //return view('organization.kyc')->with($data);
-        return view('organization.kyc')->with(compact('organization','countries','data'));
+        return view('organization.kyc')->with(compact('organization','countries','businessnature','data'));
     }
 
     /**
