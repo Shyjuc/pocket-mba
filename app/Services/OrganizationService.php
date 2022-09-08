@@ -82,13 +82,23 @@ class OrganizationService
         $companies->status_id = $submitted_status->id;
 
         //Services to upload files
-        $image = $ImageService->imagefileUpload($request->file('company_logo'));
-        $trade = $FileService->tradefileUpload($request->file('trade_license'),$companies->owner_id);
-        $vat = $FileService->vatfileUpload($request->file('vat_certificate'),$companies->owner_id);        
-
-        $companies->image_id = $image;
-        $companies->trade_license_id = $trade;
-        $companies->vat_certificate_id = $vat;    
+        if($request->file('company_logo'))
+        {
+            $image = $ImageService->imagefileUpload($request->file('company_logo'));
+            $companies->image_id = $image;
+        }
+        
+        if($request->file('trade_license'))
+        {
+            $trade = $FileService->tradefileUpload($request->file('trade_license'),$companies->owner_id);
+            $companies->trade_license_id = $trade;
+        }
+        
+        if($request->file('vat_certificate'))
+        {
+            $vat = $FileService->vatfileUpload($request->file('vat_certificate'),$companies->owner_id);
+            $companies->vat_certificate_id = $vat;
+        }
 
         $companies->save();
 

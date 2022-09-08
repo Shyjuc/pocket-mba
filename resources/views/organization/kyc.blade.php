@@ -74,8 +74,8 @@
                 <div>
                     <x-label for="nature_of_business" :value="__('Nature of Business')" />
                     <select class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="nature_of_business" id="nature_of_business">
-                        @foreach($businessnature as $key=>$businessModel)
-                        <option @if($key==$businessModel->id) selected @endif value="{{$key}}">{{$businessModel->label}}</option>
+                        @foreach($businessnatures as $businessnature)
+                        <option @if($businessnature->id==$organization->nature_of_the_business_id) selected @endif value="{{$businessnature->id}}">{{$businessnature->label}}</option>
                         @endforeach
                     </select>
                 </div>

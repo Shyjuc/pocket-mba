@@ -13,6 +13,7 @@ use App\Services\FileService;
 use App\Services\ImageService;
 use Illuminate\Support\Facades\DB;
 use App\Services\OrganizationService;
+use App\Services\OptionService;
 use App\Http\Resources\OrganizationResource;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
@@ -93,7 +94,7 @@ class OrganizationController extends Controller
      * @param  \App\Models\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function kyc($uuid)
+    public function kyc($uuid,OptionService $OptionService)
     {
        
        // $goption    =  Optiongroup::where('name','shareholders_type')->first()->option; 
@@ -113,13 +114,9 @@ class OrganizationController extends Controller
         $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
 
         $categories = Option::all(['id','name']);
-        $businessnature = DB::table('option_optiongroup')
-        ->leftjoin('options', 'option_optiongroup.option_id', '=', 'options.id')
-        ->leftjoin('optiongroups', 'option_optiongroup.optiongroup_id', '=', 'optiongroups.id')
-        ->where('optiongroups.id', 4)
-        ->get(['options.id', 'options.label']);
+        $businessnatures = $OptionService->get_business_nature();  
         
-        return view('organization.kyc')->with(compact('organization','countries','businessnature'));
+        return view('organization.kyc')->with(compact('organization','countries','businessnatures'));
    
      }
 
@@ -130,7 +127,7 @@ class OrganizationController extends Controller
      * @param  \App\Models\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function kycstore($uuid, Request $request, OrganizationService $OrganizationService, ImageService $ImageService, FileService $FileService)
+    public function kycstore($uuid, Request $request, OrganizationService $OrganizationService, ImageService $ImageService, FileService $FileService, OptionService $OptionService)
     {
         //dd($uuid);
         // $request->validate([
@@ -144,13 +141,10 @@ class OrganizationController extends Controller
         //return view('organization.kyc')->with(compact('organization','countries', 'message'));
         $countries       =  (object) Helper::cList();   
         $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
-        $businessnature = DB::table('option_optiongroup')
-        ->leftjoin('options', 'option_optiongroup.option_id', '=', 'options.id')
-        ->leftjoin('optiongroups', 'option_optiongroup.optiongroup_id', '=', 'optiongroups.id')
-        ->where('optiongroups.id', 4)
-        ->get(['options.id', 'options.label']);    
+        $businessnatures = $OptionService->get_business_nature();   
+
         //return view('organization.kyc')->with($data);
-        return view('organization.kyc')->with(compact('organization','countries','businessnature','data'));
+        return view('organization.kyc')->with(compact('organization','countries','businessnatures','data'));
     }
 
     /**
