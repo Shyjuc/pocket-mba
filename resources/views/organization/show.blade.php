@@ -62,6 +62,9 @@
       <a href="javascript:void(0)" @click="openTab = 5" :class="openTab === 5 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 text-body-color hover:bg-primary hover:text-white">
         Deals
         </a>
+      <a href="javascript:void(0)" @click="openTab = 6" :class="openTab === 6 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 text-body-color hover:bg-primary hover:text-white">
+         Bank Details
+         </a>
    </div>
    <div>
       <div x-show="openTab === 1" class="text-body-color text-base leading-relaxed p-6">
@@ -105,6 +108,13 @@
         harum vero! Quas sit odit optio debitis nulla quisquam,
         dolorum quaerat animi iusto quod.
      </div>
+
+     <div x-show="openTab === 6" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
+      <p>Bank Name : {{ $companies->bank_name }}</p>
+      <p>Bank Account Number : {{ $companies->bank_account_number}}</p>
+      <p>Bank Address : {{ $companies->bank_address}}</p>
+      <p>Bank SWIFT Code : {{ $companies->bank_swift_code}}</p>
+   </div>
    </div>
 </div>
                     </div>
