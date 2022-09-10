@@ -23,7 +23,7 @@
                         <x-organizationtable>
                             @foreach ($organizations as $organization)
                             <tr>
-                                <td class="p-2 ">{{ $organization->id }}</td>
+                                <td class="p-2 "><a href="{{route('companies.show', $organization->id )}}">{{ $organization->id }}</a></td>
                                 <td class="p-2 ">{{ $organization->name }}</td>
                                 <td class="p-2 ">{{ $organization->owner->email }}</td>
                                 <td class="p-2 ">{{ $organization->status->label }}</td>

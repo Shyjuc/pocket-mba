@@ -17,9 +17,20 @@ class FileService
         return File::all();
     }
 
+    public function validateFileFormat($file)
+    {
+        $allowed = array('jpg', 'png', 'pdf');
+        //$filename = $_FILES['video_file']['name'];
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
+        if (!in_array($ext, $allowed)) {
+            return false;
+        }
+    }
+
     // Todo refactor with dependency injection
     public function tradefileUpload($tradefile,$ownerId)
-    {       
+    {  
+
             $fileData2 = $this->uploads($tradefile,'files/license/');
             $trade = File::create([
                        'name' => $fileData2['fileName'],

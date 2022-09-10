@@ -90,14 +90,20 @@ class OrganizationService
         
         if($request->file('trade_license'))
         {
+            $validate = $FileService->validateFileFormat($request->file('trade_license'));
+            if($validate){
             $trade = $FileService->tradefileUpload($request->file('trade_license'),$companies->owner_id);
             $companies->trade_license_id = $trade;
+            }
         }
         
         if($request->file('vat_certificate'))
         {
+            $validate = $FileService->validateFileFormat($request->file('vat_certificate'));
+            if($validate){
             $vat = $FileService->vatfileUpload($request->file('vat_certificate'),$companies->owner_id);
             $companies->vat_certificate_id = $vat;
+            }
         }
 
         $companies->save();

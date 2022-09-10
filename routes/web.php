@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resources([
-        'companies' => OrganizationController::class
+        'companies' => OrganizationController::class,
     ]);
 });
 
