@@ -53,4 +53,18 @@ class FileService
             return ($vat->id);       
                         
     }
+
+    public function headerImageUpload($header_file,$ownerId)
+    {               
+            //$vat_file = $request->file('vat_certificate');
+            dd($header_file);
+            $fileData = $this->uploads($header_file,'files/headerimage/');
+            $head = File::create([
+                       'name' => $fileData['fileName'],
+                       'file_path' => $fileData['fileType'],
+                       'user_id' => $ownerId
+                    ]);
+            return ($head->id);       
+                        
+    }
 }

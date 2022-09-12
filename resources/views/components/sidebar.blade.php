@@ -1,4 +1,4 @@
-<div class="basis-1/6 shadow-sm" style="background:#eee; border-right:1px solid #ccc"> 
+<div class="basis-1/6 shadow-sm" style="background:#eee; border-right:1px solid #ccc; height:100vh;"> 
     <ul class="p-3 mt-10">
         <li>
     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">

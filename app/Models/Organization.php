@@ -58,13 +58,23 @@ class Organization extends Model
     //
     public function vat_certificate()
     {
-        return $this->hasOne(File::class, 'organization_user');
+        return $this->belongsTo(File::class, 'vat_certificate_id');
     }
    
     //Add for trade license
     public function trade_license()
     {
-        return $this->hasOne(File::class, 'organization_user');
+        return $this->belongsTo(File::class, 'trade_license_id');
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Gravatar::class);
+    }
+
+    public function header_image()
+    {
+        return $this->belongsTo(Gravatar::class, 'header_image_id');
     }
 
 

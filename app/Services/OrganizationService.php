@@ -106,6 +106,20 @@ class OrganizationService
             }
         }
 
+        if($request->file('header_image'))
+        {
+            /*
+            $validate = $FileService->validateFileFormat($request->file('header_image'));
+            if($validate){
+            $head = $FileService->headerImageUpload($request->file('header_image'),$companies->owner_id);
+            $companies->header_image_id = $head;
+            }
+            */
+
+            $image = $ImageService->headerImageUpload($request->file('header_image'));
+            $companies->header_image_id = $image;
+        }
+
         $companies->save();
 
         $message = ['type'=>'success', 'content'=>'Details are submitted successfully.'];

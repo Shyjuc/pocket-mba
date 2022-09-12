@@ -108,6 +108,12 @@
                     
                 </div>
 
+                <div class="custom-file">
+                    <x-label for="header_image" :value="__('Header Image')" />
+                    <input type="file" name="header_image" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="header_image">
+                    
+                </div>
+
 
                 <div class="flex items-center justify-left mt-4">
                     <x-button>

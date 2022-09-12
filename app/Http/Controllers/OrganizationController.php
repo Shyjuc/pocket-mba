@@ -78,11 +78,13 @@ class OrganizationController extends Controller
     {
          //dd($company->id);
 
-         $companies = Organization::where('organizations.id',$company->id)->join('images', 'organizations.image_id', '=', 'images.id')
-         ->first(['organizations.*', 'images.media_path']);
+         //$companies = Organization::where('organizations.id',$company->id)->join('images', 'organizations.image_id', '=', 'images.id')
+         //->first(['organizations.*', 'images.media_path']);
+
+         //$companies = Organization::with(['author', 'publisher'])->get();
                      
 
-         return view('organization.show')->with(compact('companies'));
+         return view('organization.show')->with(compact('company'));
          //return view('organization.show',compact('organization'));
          
     }

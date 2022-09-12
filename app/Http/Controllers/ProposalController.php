@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proposal;
+use App\Models\Organization;
 use App\Services\OptionService;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
