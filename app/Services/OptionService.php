@@ -22,6 +22,12 @@ class OptionService
         return $option_groups->where('name',$group_code)->first()->option->all();
     }
 
+    public function get_option_by_code($code)
+    {
+        $status = Option::where('name',$code)->first();
+        return $status;
+    }
+
     public function get_business_nature(): Array
     {
         return $this->get_options_by_group('nature_of_the_business');

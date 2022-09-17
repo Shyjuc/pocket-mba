@@ -53,6 +53,8 @@ class OrganizationService
             $message = ['type'=>'success', 'content'=>'Company is added Successfully, an email will be send to the address.'];
         }
 
+        $organization->users()->save($user);
+
         return ['message'=>$message,'organization'=>$organization];
        
  

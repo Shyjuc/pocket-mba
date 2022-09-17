@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proposal;
+use App\Models\Category;
 use App\Models\Organization;
 use App\Services\OptionService;
+use App\Services\ProposalService;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
@@ -35,7 +37,8 @@ class ProposalController extends Controller
 
         //Todo conditionally load organizations based on the clients list. 
         $organizations   = Organization::all();
-        return view('deals.create')->with(compact('payment_options', 'organizations'));
+        $categories = Category::all(['id','name']);
+        return view('deals.create')->with(compact('payment_options', 'organizations', 'categories'));
     }
 
     /**
@@ -44,15 +47,18 @@ class ProposalController extends Controller
      * @param  \App\Http\Requests\StoreProposalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProposalRequest $request)
+    public function store(StoreProposalRequest $request, ProposalService $ProposalService, OptionService $OptionService)
     {
+
+        $data = $ProposalService->createProposal($request,$OptionService);
+
         //
-        $proposal = Proposal::create([
-            'title' => $request->name,
-            'description' => 'Description',
-            'demurrage' =>  $request->demurrage,
-            'body' =>  $request->description
-        ]);
+        if($data['message']['type']=="success")
+        {
+            return redirect(route('deals.index'));
+        }
+        
+        return view('proposal.create')->with($data);
 
     }
 

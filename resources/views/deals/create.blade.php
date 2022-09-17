@@ -38,8 +38,9 @@
                                     <div class="mb-5">
                                         <x-label for="category_id" :value="__('Category')" />
                                         <select style="display: block; widh:100%" class="mt-1 rounded-md block shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="category_id" id="category_id">
-                                            <option value="1">Oil & Gas</option>
-                                            <option value="1">Very long text --------------------------------</option>
+                                            @foreach($categories as $category)
+                                            <option value=" {{$category->id}}"> {{$category->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                  
@@ -56,9 +57,8 @@
                                     <div class="mb-5">
                                         <x-label for="organization_id" :value="__('Company')" />
                                         <select style="display: block; widh:100%" class="mt-1 rounded-md block shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="organization_id" id="organization_id">
-                                           @foreach($payment_options as $payment_option)
-                                           {{$payment_option}}
-                                           <option value=" {{$payment_option->id}}"> {{$payment_option->label}}</option>
+                                           @foreach($organizations as $organization)
+                                           <option value=" {{$organization->id}}"> {{$organization->name}}</option>
                                            @endforeach
                                         </select>
                                     </div>
