@@ -10,6 +10,7 @@ use App\Services\ProposalService;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
+use Carbon\Carbon;
 
 class ProposalController extends Controller
 {
@@ -106,4 +107,31 @@ class ProposalController extends Controller
     {
         //
     }
+
+    public function showTest($id)
+    {
+        $expiryDate = Carbon::now()->subDays(1)->toDateString();
+        $Data = Proposal::where(['uuid'=>$id])->where('expiry_date','>',$expiryDate);
+        if($Data->count() > 0){
+            $proposalData = $Data->first();
+            return view('EmailProposals.show')->with(compact('proposalData'));
+        }else{
+            return abort(403, 'Unauthorized action.');
+        }
+    }
+
+    public function viewproposal($uuid, OptionService $OptionService)
+    {
+         
+        $countries       =  (object) Helper::cList();   
+        $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
+
+        $categories = Option::all(['id','name']);
+        $businessnatures = $OptionService->get_business_nature();  
+        
+        return view('organization.kyc')->with(compact('organization','countries','businessnatures'));
+   
+     }
+
+    
 }

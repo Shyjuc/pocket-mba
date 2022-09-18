@@ -18,6 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    $proposal = App\Models\Proposal::find(3);
+    $proposalService = New App\Services\ProposalService();
+    $proposalService->sendProposal($proposal,2);
+    //dd($proposalService);
+});
+
+Route::get('email-proposal-test/{id}', [ProposalController::class, 'showTest']);
+Route::post('update-email-proposal', [ProposalController::class, 'update'])->name('update-proposal-status'); 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -48,5 +58,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/kyc/{uuid}', [OrganizationController::class, 'kyc'])->name('kyc');
 Route::patch('/kyc/{uuid}', [OrganizationController::class, 'kycstore'])->name('kycstore');
+
+Route::get('/proposal/{uuid}', [ProposalController::class, 'viewproposal'])->name('viewproposal');
 
 require __DIR__.'/auth.php';

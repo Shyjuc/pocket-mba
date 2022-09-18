@@ -25,15 +25,30 @@ class ProposalService
 
     public function sendProposal($proposal,$user)
     {
-        NewProposalsNotifyAdminsJob::dispatch($proposal);
+        //NewProposalsNotifyAdminsJob::dispatch($proposal);
 
         $toUser = User::where('id',$user)->first();
         $email = $toUser->email;
+        $toUserName = $toUser->name;
 
-        Mail::send('email.proposal', $proposal, function($message) use ($email) {
+        $organization = Organization::where('id',$proposal->organization_id)->first();
+        $company = $organization->name;
+
+        $url=URL('proposal')."/".$proposal->uuid;
+
+        $datas = array(
+            'title'    => $proposal->title,
+            'description'    => $proposal->description,
+            'url'    => $url,
+            'user'    => $toUserName,
+            'company'    => $company,
+        );
+        //dd($email);
+
+        Mail::send('email.proposal', $datas, function($message) use ($email) {
             $message->to($email)->subject
-                ('Activate Account');
-            $message->from('user@site.com','After I Go');
+                ('New Deal Request');
+            $message->from('user@quadrock.com','Quadrock');
         });
     }
 
@@ -74,13 +89,17 @@ class ProposalService
 
         $proposal->save();
 
+        
+
+        $this->sendProposal($proposal,$to_user_id);
+
         //dd($proposal);
 
         $message = ['type'=>'success', 'content'=>'Deal created successfully, an email will be send to the address.'];
 
         return ['message'=>$message];
 
-        //$this->sendProposal($proposal,$to_user_id);
+        
 
     }
 
