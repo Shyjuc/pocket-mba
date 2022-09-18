@@ -10,6 +10,8 @@ use App\Jobs\NewProposalsNotifyAdminsJob;
 use App\Http\Requests\StoreProposalRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 
  
 class ProposalService
@@ -39,63 +41,47 @@ class ProposalService
     public function createProposal(StoreProposalRequest $request, $OptionService)
     {
         // Create user
-        $toOrganisation = Organization::where('id',$request->organization_id)->first();
-        $toUser = $toOrganisation->owner_id;
+        $to_organization = Organization::where('id',$request->organization_id)->first();
+        $to_user_id = $to_organization->owner_id;
 
-        $currentUser = Auth::user();
-        $currentUserOrganiaztion = $currentUser->organizations->first();
+        $current_user = Auth::user();
+        $organization_id = $current_user->organizations->first()->id;
 
-        $stage = $OptionService->get_option_by_code('new');
-        $status = $OptionService->get_option_by_code('submitted');
+        $stage_id = $OptionService->get_option_by_code('submitted')->id;
+        $status_id = $OptionService->get_option_by_code('new')->id;
 
-        $expiry = date("Y/m/d");
+        $expiry = Carbon::now();
+        $expiry = $expiry->add(30, 'day');
 
-        //dd($stage);
-        //$message = false;
+        $uuid = (string) Str::uuid();
+        
+        //dd($uuid);
 
-        $proposal = Proposal::create([
-            'title' => $request->name,
-            'description' => 'Description',
-            'demurrage' =>  $request->demurrage,
-            'body' =>  $request->description,
-            'organization_id' =>  $toOrganisation,
-            'user_id' =>  $toUser,
-            'to_organization_id' =>  $currentUserOrganiaztion,
-            'to_user_id' => $currentUser,
-            'stage_id' => $stage,
-            'status_id' => $status,
-            'expiry_date' => $expiry
-        ]);
+        $proposal = new Proposal;
+        $proposal->uuid =   $uuid;
+        $proposal->title    =   $request->title;
+        $proposal->description  =   'Description';
+        $proposal->demurrage  =   $request->demurrage;
+        $proposal->body = $request->description;
+        $proposal->organization_id =    $organization_id;
+        $proposal->user_id  =   $current_user->id;
+        $proposal->to_organization_id  =   $to_organization->id;
+        $proposal->to_user_id  =   $to_user_id;
+        $proposal->category_id = $request->category_id;
+        $proposal->stage_id  =   $stage_id;
+        $proposal->status_id  =   $status_id;
+        $proposal->expiry_date  =   $expiry;
 
-        $this->sendProposal($proposal,$toUser);
+        $proposal->save();
 
-        //Create user if not exists
-        /*
-        if(!$user){
-            $user = User::create([
-                'name' => $request->name,
-                'email' =>$request->email,
-                'password' => '$2y$10$92IXUNpsssxkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                'remember_token' => Str::random(10)
-            ]);
-        }
- 
-        $organization = Organization::where('owner_id', '=', $user->id)->first();
-        if($organization) {
-            $message = ['type'=>'error', 'content'=>'A company exists with the given email address'];
-        } else {
-            $organization = Organization::create([
-                'name' => $request->name,
-                'owner_id' => $user->id
-            ]);
-            $message = ['type'=>'success', 'content'=>'Company is added Successfully, an email will be send to the address.'];
-        }
-        */
+        //dd($proposal);
 
-        //return ['message'=>$message,'organization'=>$organization];
-       
- 
-        //return $user;
+        $message = ['type'=>'success', 'content'=>'Deal created successfully, an email will be send to the address.'];
+
+        return ['message'=>$message];
+
+        //$this->sendProposal($proposal,$to_user_id);
+
     }
 
    

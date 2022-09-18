@@ -14,4 +14,24 @@ class Proposal extends Model
     protected $richTextFields = [
         'body'
     ];
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Option','status_id');
+    } 
+
+    public function stage()
+    {
+        return $this->belongsTo('App\Models\Option','stage_id');
+    } 
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category','category_id');
+    } 
+
+    public function toOrganization()
+    {
+        return $this->belongsTo('App\Models\Organization','to_organization_id');
+    } 
 }
