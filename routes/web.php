@@ -62,3 +62,7 @@ Route::patch('/kyc/{uuid}', [OrganizationController::class, 'kycstore'])->name('
 Route::get('/proposal/{uuid}', [ProposalController::class, 'viewproposal'])->name('viewproposal');
 
 require __DIR__.'/auth.php';
+
+Route::get('proposal-public/{id}', [ProposalController::class, 'publicUrl']);
+
+Route::post('proposal-action/{uuid}', [ProposalController::class, 'proposalAction'])->name('proposalAction');

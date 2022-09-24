@@ -28,10 +28,20 @@ class Proposal extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category','category_id');
-    } 
+    }
+
+    public function organization()
+    {
+        return $this->belongsTo('App\Models\Organization','organization_id');
+    }  
 
     public function toOrganization()
     {
         return $this->belongsTo('App\Models\Organization','to_organization_id');
+    } 
+
+    public function toUser()
+    {
+        return $this->belongsTo('App\Models\User','to_user_id');
     } 
 }

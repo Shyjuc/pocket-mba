@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proposal;
+use Carbon\Carbon;
 use App\Models\Category;
+use App\Models\Proposal;
 use App\Models\Organization;
 use App\Services\OptionService;
 use App\Services\ProposalService;
+use Illuminate\Http\Request;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
-use Carbon\Carbon;
 
 class ProposalController extends Controller
 {
@@ -132,6 +133,31 @@ class ProposalController extends Controller
         return view('organization.kyc')->with(compact('organization','countries','businessnatures'));
    
      }
+
+     public function publicUrl($id, Organization $company)
+    {
+        $expiryDate = Carbon::now()->subDays(1)->toDateString();
+        $proposal = Proposal::where(['uuid'=>$id])->where('expiry_date','>',$expiryDate)->first();
+        if($proposal){
+            
+            return view('EmailProposals.public')->with(compact('proposal'));
+        }else{
+            return abort(403, 'Unauthorized action.');
+        }
+    }
+
+
+    public function proposalAction(Request $request, OptionService $option_service, ProposalService $proposal_service)
+    {
+
+        $data = $proposal_service->proposalAction($request,$option_service);
+
+        dd($request);
+        
+        // echo "<pre>";print_r($request->all());die;
+       
+
+    }
 
     
 }

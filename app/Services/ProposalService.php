@@ -5,7 +5,10 @@ use App\Helpers\Media;
 use App\Models\Proposal;
 use App\Models\User;
 use App\Models\Organization;
+use App\Models\ProposalStatus;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Jobs\NewProposalsNotifyAdminsJob;
 use App\Http\Requests\StoreProposalRequest;
 use Illuminate\Database\Eloquent\Collection;
@@ -17,6 +20,7 @@ use Illuminate\Support\Str;
 class ProposalService
 {
     use Media;
+    private $proposal=false;
 
     public function all(): Collection
     {
@@ -101,6 +105,57 @@ class ProposalService
 
         
 
+    }
+
+    public function proposalAction(Request $request, $optionService)
+    {
+        //Update proposal status id (Accept or reject) in proposal table
+        //Add comments
+        //Insert into proposal status log
+        //Trigger emails
+
+        //$proposal_statuses = $optionService->get_options_by_group('proposal_statuses');
+
+        $this->proposal = Proposal::where(['uuid'=>$request->uuid])->first();
+
+        
+        $proposal_status = $optionService->get_option_by_code($request->btn_action);
+
+        //dd($proposal_status);
+
+        //to do verify given status
+        if($this->proposal && $proposal_status)
+        {
+           $this->updateStatus($proposal_status, $this->proposal->toUser);
+           $this->addComment($request, $this->proposal->toUser);
+        }
+
+        //return response()->json($response);
+    }
+
+    public function updateStatus($status,$user)
+    {
+        $this->proposal->status_id = $status->id;
+        $this->proposal->save();
+        $this->addStatusLog($status,$user);
+    }
+
+    public function addStatusLog($status,$user)
+    {
+        $proposal_status = new ProposalStatus();
+        $proposal_status->proposal_id = $this->proposal->id;
+        $proposal_status->option_id = $status->id;
+        $proposal_status->user_id = $user->id;
+        $proposal_status->save();
+    }
+
+    public function addComment($request,$user)
+    {
+        $commentData = Comment::insert([
+            'proposal_id' => $this->proposal->id,
+            'content' => $request->comment,
+            'user_id' => $user->id
+        ]);
     }
 
    
