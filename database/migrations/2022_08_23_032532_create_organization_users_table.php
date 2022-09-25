@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('organization_user', function (Blueprint $table) {
-            $table->integer('organization_id')->index();
-            $table->integer('user_id')->index();
+            $table->smallInteger('organization_id')->unsigned()->index();
+            $table->smallInteger('user_id')->unsigned()->index();
         });
     }
 

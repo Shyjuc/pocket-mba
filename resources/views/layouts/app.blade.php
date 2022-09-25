@@ -12,6 +12,8 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/favicon.png') }}">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <x-rich-text-trix-styles />

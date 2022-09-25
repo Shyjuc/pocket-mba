@@ -64,6 +64,7 @@ return new class extends Migration
 		    $table->foreign('nature_of_the_business_id')->references('id')->on('options');
 
             $table->integer('image_id')->nullable();
+            $table->smallInteger('header_image_id')->nullable()->unsigned();
         });
     }
 

@@ -22,11 +22,12 @@
                             </x-flash>
                         @endif
                     <div class="p-6 bg-white border-b border-gray-200" style="min-height: 300px">
+                        <img src="{{ asset( $company->header_image->media_path) }}" class="object-cover w-100" style="max-height: 200px; width:100%;">
                         <form method="POST" action="{{ route('deals.store') }}">
                             @csrf
                             @method('POST')
                             
-                            <div class="grid grid-cols-1">
+                            <div class="grid grid-cols-1 mt-5">
                                 <!-- Title -->
                                 <div class="mb-5">
                                     <x-label for="title" :value="__('Title')" />

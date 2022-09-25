@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
+use Auth;
+
 
 class ProposalController extends Controller
 {
@@ -40,7 +42,11 @@ class ProposalController extends Controller
         //Todo conditionally load organizations based on the clients list. 
         $organizations   = Organization::all();
         $categories = Category::all(['id','name']);
-        return view('deals.create')->with(compact('payment_options', 'organizations', 'categories'));
+
+        $current_user = Auth::user();
+        $company = $current_user->organizations->first();
+
+        return view('deals.create')->with(compact('payment_options', 'organizations', 'categories', 'company'));
     }
 
     /**
@@ -151,11 +157,7 @@ class ProposalController extends Controller
     {
 
         $data = $proposal_service->proposalAction($request,$option_service);
-
-        dd($request);
-        
-        // echo "<pre>";print_r($request->all());die;
-       
+        return back();
 
     }
 

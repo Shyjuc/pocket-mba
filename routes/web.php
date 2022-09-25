@@ -19,9 +19,12 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    $proposal = App\Models\Proposal::find(3);
-    $proposalService = New App\Services\ProposalService();
-    $proposalService->sendProposal($proposal,2);
+    $proposal = App\Models\Proposal::find(1);
+    dd($proposal->comments);
+    //$proposalService = New App\Services\ProposalService();
+    //$proposalService->sendProposal($proposal,2);
+    //$current_user = Auth::user();
+    //$organization_id = $current_user->organizations->first()->id;
     //dd($proposalService);
 });
 

@@ -9,4 +9,6 @@ class OrganizationUser extends Model
 {
     use HasFactory;
     protected $table = 'organization_user';
+
+    public $timestamps = false;
 }

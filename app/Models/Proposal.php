@@ -43,5 +43,10 @@ class Proposal extends Model
     public function toUser()
     {
         return $this->belongsTo('App\Models\User','to_user_id');
+    }
+
+    public function comments()
+    {
+       return $this->hasMany(Comment::class);
     } 
 }

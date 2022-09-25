@@ -15,9 +15,18 @@
                 @csrf
                 @method('PATCH')
                 @if(isset($message) && !empty($message))
-                <x-flash type="{{$message['type']}}" class="m-4">
+                <x-flash type="{{$message['type']}}" class="mb-4 mt-2">
                    {{$message['content']}}
                 </x-flash>
+                @endif
+                @if ($errors->any())
+                <x-flash type="error" class="mb-4 mt-2">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                 </x-flash>
                 @endif
             <div class="grid grid-cols-2 gap-4 p-6 bg-white border-b border-gray-200">
               

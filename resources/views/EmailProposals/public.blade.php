@@ -21,11 +21,29 @@
                 @endif
 
             <div class="grid gap-4 p-6 bg-white border-b border-gray-200">
+                @if($proposal->organization->header_image)
                 <img src="{{ asset( $proposal->organization->header_image->media_path) }}" class="object-cover w-100" style="max-height: 200px; width:100%;">
+                @endif
                 <h1 class="text-3xl">{{ $proposal->title }}</h1>
                 <h2>From: {{ $proposal->organization->name }} | Expiry : {{ $proposal->expiry_date }}</h2>
                 <div>
                 {!! $proposal->body !!}
+                </div>
+
+                <div>
+                    
+                    <ul class="space-y-2">
+                        
+                        @foreach(json_decode($proposal->comments, true) as $value)
+                        <li class="flex justify-start bg-red-100">
+                          <div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+                            <span class="block">{{ $value['content'] }}</span>
+                          </div>
+                        </li>
+                        @endforeach
+                        
+                      </ul>
+
                 </div>
 
                 <div>
