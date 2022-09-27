@@ -22,11 +22,13 @@ class FileService
     {  
 
             $fileData2 = $this->uploads($tradefile,'files/license/');
+            
             $trade = File::create([
                        'name' => $fileData2['fileName'],
                        'file_path' => $fileData2['filePath'],
                        'user_id' => $ownerId
                     ]);
+                    
              return ($trade->id);             
                         
     }
@@ -40,6 +42,7 @@ class FileService
                        'file_path' => $fileData3['fileType'],
                        'user_id' => $ownerId
                     ]);
+            //dd($vat);        
             return ($vat->id);       
                         
     }
@@ -47,7 +50,7 @@ class FileService
     public function headerImageUpload($header_file,$ownerId)
     {               
             //$vat_file = $request->file('vat_certificate');
-            dd($header_file);
+            //dd($header_file);
             $fileData = $this->uploads($header_file,'files/headerimage/');
             $head = File::create([
                        'name' => $fileData['fileName'],

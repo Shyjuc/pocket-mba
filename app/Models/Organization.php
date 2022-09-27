@@ -58,13 +58,13 @@ class Organization extends Model
     //
     public function vat_certificate()
     {
-        return $this->belongsTo(File::class, 'vat_certificate_id');
+        return $this->belongsTo(File::class, 'vat_certificate_file_id');
     }
    
     //Add for trade license
     public function trade_license()
     {
-        return $this->belongsTo(File::class, 'trade_license_id');
+        return $this->belongsTo(File::class, 'trade_license_file_id');
     }
 
     public function image()

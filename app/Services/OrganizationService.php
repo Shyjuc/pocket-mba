@@ -64,9 +64,9 @@ class OrganizationService
     public function storekycOrganization($uuid, Request $request, $ImageService, $FileService)
     {
         $request->validate([
-            'trade_license' => 'mimetypes:pdf,jpg,png',
-            'vat_certificate' => 'mimetypes:pdf,jpg,png',
-            'header_image' => 'mimetypes:jpg,png'
+            'trade_license.*' => 'mimetypes:pdf,jpg,png',
+            'vat_certificate.*' => 'mimetypes:pdf,jpg,png',
+            'header_image.*' => 'mimetypes:jpg,png'
         ]);
 
         $countries       =  (object) Helper::cList();   
@@ -99,14 +99,14 @@ class OrganizationService
         if($request->file('trade_license'))
         {
             $trade = $FileService->tradefileUpload($request->file('trade_license'),$companies->owner_id);
-            $companies->trade_license_id = $trade;
+            $companies->trade_license_file_id = $trade;
 
         }
         
         if($request->file('vat_certificate'))
         {
             $vat = $FileService->vatfileUpload($request->file('vat_certificate'),$companies->owner_id);
-            $companies->vat_certificate_id = $vat;
+            $companies->vat_certificate_file_id = $vat;
         }
 
         if($request->file('header_image'))
