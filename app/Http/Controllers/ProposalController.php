@@ -78,7 +78,8 @@ class ProposalController extends Controller
      */
     public function show(Proposal $proposal)
     {
-        //
+        //dd($proposal); gets attributes null
+        return view('deals.show')->with(compact('proposal'));
     }
 
     /**

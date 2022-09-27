@@ -17,7 +17,7 @@
                         <x-proposaltable>
                             @foreach ($proposals as $proposal)
                             <tr>
-                                <td class="p-2 ">{{ $proposal->id }}</td>
+                                <td class="p-2 "><a href="{{route('deals.show', $proposal->id )}}">{{ $proposal->id }}</a></td>
                                 <td class="p-2 ">{{ $proposal->title }}</td>
                                 <td class="p-2 ">{{ $proposal->category->name }}</td>
                                 <td class="p-2 ">{{ $proposal->toOrganization->name }}</td>
