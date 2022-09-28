@@ -76,9 +76,10 @@ class ProposalController extends Controller
      * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function show(Proposal $proposal)
+    public function show($proposal)
     {
-        //dd($proposal); gets attributes null
+        //dd($proposal); 
+        $proposal = Proposal::where(['id'=>$proposal])->first();
         return view('deals.show')->with(compact('proposal'));
     }
 

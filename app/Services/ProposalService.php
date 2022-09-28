@@ -48,24 +48,16 @@ class ProposalService
             'company'    => $company,
         );
         //dd($email);
-
+        $emails = [$email];
         //Mail::to($email)->send(new EmailDemo($mailData));
 
-        $details = [
-            'title' => 'Mail from Quadrock',
-            'body' => 'This is for testing email using smtp'
-        ];
-       
-        Mail::to('tree2fame@gmail.com')->send(new \App\Mail\MyTestMail($details));
-
-         
-        /*
-        Mail::send('email.proposal', $datas, function($message) use ($email) {
-            $message->to($email)->subject
+        
+        Mail::send('email.proposal', $datas, function($message) use ($emails) {
+            $message->to($emails)->subject
                 ('New Deal Request');
             $message->from('user@quadrock.com','Quadrock');
         });
-        */
+        
     }
 
     // Todo refactor with dependency injection.
