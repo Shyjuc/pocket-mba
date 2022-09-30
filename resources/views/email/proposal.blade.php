@@ -60,19 +60,5 @@
     
         </columns>
       </row>
-      
-      <wrapper class="secondary">
-        <spacer size="16"></spacer>
-        <row>
-          <columns small="12" large="6">
-            <h5>Connect With Us:</h5>
-            <menu class="vertical">
-              <item style="text-align: left;" href="#">Twitter</item>
-              <item style="text-align: left;" href="#">Facebook</item>
-              <item style="text-align: left;" href="#">Google +</item>
-            </menu>
-          </columns>
-        </row>
-      </wrapper>
     
     </container>

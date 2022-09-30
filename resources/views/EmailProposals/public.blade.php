@@ -35,11 +35,20 @@
                     <ul class="space-y-2">
                         
                         @foreach(json_decode($proposal->comments, true) as $value)
+                        @if($proposal->status_id == 3)
                         <li class="flex justify-start bg-red-100">
                           <div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                             <span class="block">{{ $value['content'] }}</span>
                           </div>
                         </li>
+                        @endif
+                        @if($proposal->status_id == 2)
+                        <li class="flex justify-start bg-green-100">
+                          <div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+                            <span class="block">{{ $value['content'] }}</span>
+                          </div>
+                        </li>
+                        @endif
                         @endforeach
                         
                       </ul>

@@ -45,6 +45,33 @@
                         @endforeach
                         
                       </ul>
+
+                      <form method="POST" action="{{ route('proposalAction',$proposal->uuid) }}">
+                        @csrf
+                        @if(isset($message) && !empty($message))
+                        <x-flash type="{{$message['type']}}" class="m-4">
+                           {{$message['content']}}
+                        </x-flash>
+                        @endif
+
+                      <div>
+                        <x-label for="comment" :value="__('Comment')" />
+                        <x-input id="comment" class="block mt-1 w-full" type="text" name="comment" value="" required autofocus />
+                        <input type="hidden" name="uuid" value="{{ $proposal->uuid }}">
+                    </div>
+                   
+                    <div class="flex items-center justify-start mt-4">
+                        <x-button class="mr-4" name="btn_action" value="accepted">
+                            {{ __('Accept') }}
+                        </x-button>
+    
+                        <x-altbutton name="btn_action" value="rejected">
+                            {{ __('Reject') }}
+                        </x-altbutton>
+        
+                    </div>
+
+                      </form>
       
    </div>
 </div>

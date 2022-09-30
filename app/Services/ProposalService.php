@@ -38,7 +38,7 @@ class ProposalService
         $organization = Organization::where('id',$proposal->organization_id)->first();
         $company = $organization->name;
 
-        $url=URL('proposal')."/".$proposal->uuid;
+        $url=URL('proposal-public')."/".$proposal->uuid;
 
         $datas = array(
             'title'    => $proposal->title,
