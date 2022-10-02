@@ -40,6 +40,13 @@ class OptionSeeder extends Seeder
             'type' => 'text',
             'value' => 'Accepted',            
         ]);
+        $resubmitted = Option::create([
+            'name' => 'resubmitted', 
+            'label' => 'Resubmitted',
+            'description' => 'Resubmitted',
+            'type' => 'text',
+            'value' => 'Resubmitted',            
+        ]);
 
         
         $orgstatusgroup->option()->save($new);

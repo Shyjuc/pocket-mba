@@ -15,18 +15,34 @@
                          </x-linkbutton>
                         </div>
                      </div>
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="min-height: 300px">
-                     @if($proposal->organization->header_image)
+                    <div class="bg-white overflow-hidden shadow-sm" style="min-height: 300px">
+
+                      <nav class="bg-grey-100 rounded-md w-full">
+                        <ol class="list-reset flex">
+                          @foreach($proposal->statuses as $key => $status)
+                          @if($key > 0)
+                          <li class="py-2 px-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                            
+
+                          </li>
+                          @endif
+                          <li class="py-2">
+                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-neutral-600 bg-neutral-200 uppercase last:mr-0 mx-2">
+                            {{ $status->label }}
+                          </span></li>
+                          @endforeach
+                        </ol>
+                      </nav>
+                    
+
+                      @if($proposal->organization->header_image)
                      <img src="{{ asset( $proposal->organization->header_image->media_path) }}" class="object-cover w-100" style="max-height: 200px; width:100%;">
                      @endif
                     <div class="p-6 bg-white border-b border-gray-200">
-                     <div class="
-                        flex flex-wrap
-                        rounded-sm
-                        ">
-                        
-                     <img src="{{ asset( $proposal->organization->image->media_path) }}" width="50" height="50" class="rounded-md object-cover h-50 w-50">
-                    </div>
+                     
                     <h1 class="text-3xl">{{ $proposal->title }}</h1>
                     <h2>From: {{ $proposal->organization->name }} | Expiry : {{ $proposal->expiry_date }}</h2>
                     <div>
@@ -53,23 +69,6 @@
                            {{$message['content']}}
                         </x-flash>
                         @endif
-
-                      <div>
-                        <x-label for="comment" :value="__('Comment')" />
-                        <x-input id="comment" class="block mt-1 w-full" type="text" name="comment" value="" required autofocus />
-                        <input type="hidden" name="uuid" value="{{ $proposal->uuid }}">
-                    </div>
-                   
-                    <div class="flex items-center justify-start mt-4">
-                        <x-button class="mr-4" name="btn_action" value="accepted">
-                            {{ __('Accept') }}
-                        </x-button>
-    
-                        <x-altbutton name="btn_action" value="rejected">
-                            {{ __('Reject') }}
-                        </x-altbutton>
-        
-                    </div>
 
                       </form>
       

@@ -49,4 +49,9 @@ class Proposal extends Model
     {
        return $this->hasMany(Comment::class);
     } 
+
+    public function statuses()
+    {
+       return $this->BelongsToMany('App\Models\Option', 'proposal_statuses', 'proposal_id', 'option_id');
+    } 
 }

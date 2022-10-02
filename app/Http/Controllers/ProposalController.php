@@ -76,11 +76,11 @@ class ProposalController extends Controller
      * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function show($proposal)
+    public function show(Proposal $deal)
     {
         //dd($proposal); 
-        $proposal = Proposal::where(['id'=>$proposal])->first();
-        return view('deals.show')->with(compact('proposal'));
+        //$proposal = Proposal::where(['id'=>$deal])->first();
+        return view('deals.show')->with(['proposal' => $deal]);
     }
 
     /**
@@ -89,9 +89,20 @@ class ProposalController extends Controller
      * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proposal $proposal)
+    public function edit(Proposal $deal, OptionService $option_service)
     {
-        //
+
+        //dd($deal);
+
+        $payment_options = $option_service->get_options_by_group('payment_options');
+
+        //Todo conditionally load organizations based on the clients list. 
+        $organizations   = Organization::all();
+        $categories = Category::all(['id','name']);
+
+        $current_user = Auth::user();
+        $company = $current_user->organizations->first();
+        return view('deals.edit')->with(compact('deal', 'payment_options', 'organizations', 'categories', 'company'));
     }
 
     /**
@@ -101,9 +112,17 @@ class ProposalController extends Controller
      * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProposalRequest $request, Proposal $proposal)
+    public function update(UpdateProposalRequest $request, Proposal $deal, ProposalService $ProposalService, OptionService $OptionService)
     {
+        $data = $ProposalService->updateProposal($request,$deal,$OptionService);
+
         //
+        if($data['message']['type']=="success")
+        {
+            return redirect(route('deals.index'));
+        }
+        
+        return view('proposal.create')->with($data);
     }
 
     /**

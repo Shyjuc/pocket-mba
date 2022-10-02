@@ -1428,7 +1428,7 @@ body.outlook p {
                               <tr>
                                 <th>
                                   <h3 class="text-center">Hi, {{$user}}</h3>
-                                  <p class="text-center">You have received a proposal from {{$company}}.</p>
+                                  <p class="text-center">You have received a revised proposal from {{$company}}.</p>
                                 </th>
                                 <th class="expander"></th>
                               </tr>
@@ -1524,7 +1524,7 @@ body.outlook p {
                                       </tr>
                                     </table>
                                   </center>
-                                </th>
+                                </th> 
                                 <th class="expander"></th>
                               </tr>
                             </table>
