@@ -10,6 +10,7 @@ use App\Models\Option;
 use App\Helpers\Helper; 
 use App\Helpers\Media;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Collection;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Services\FileService;
@@ -127,5 +128,87 @@ class OrganizationService
 
         $message = ['type'=>'success', 'content'=>'Details are submitted successfully.'];
         return ['message'=>$message];
+    }
+
+    function csvToArray($filename = '', $delimiter = ',')
+    {
+        if (!file_exists($filename) || !is_readable($filename))
+            return false;
+
+        $header = null;
+        $data = array();
+        if (($handle = fopen($filename, 'r')) !== false)
+        {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false)
+            {
+                if (!$header)
+                    $header = $row;
+                else
+                    $data[] = array_combine($header, $row);
+            }
+            fclose($handle);
+        }
+
+        return $data;
+    }
+
+    public function storecsvOrganization($uuid, Request $request, $FileService)
+    {
+        $request->validate([
+            'csv_file.*' => 'mimetypes:csv'
+        ]);
+
+        $current_user = Auth::user();
+
+        if($request->file('csv_file'))
+        {
+            $trade = $FileService->tradefileUpload($request->file('trade_license'),$current_user->id);
+            //$companies->trade_license_file_id = $trade;
+        }
+
+        $file = public_path('files/license/'.$request->file('trade_license')); 
+
+        $customerArr = $this->csvToArray($file);
+
+        //dd($customerArr);
+
+        /*
+        for ($i = 0; $i < count($customerArr); $i ++)
+        {
+            User::firstOrCreate($customerArr[$i]);
+
+            $name = $customerArr[$i][0];
+            $email = $customerArr[$i][1];
+
+            $user = User::where('email',$email)->first();
+            $message = false;
+        
+        //Create user if not exists
+        if(!$user){
+            $user = User::create([
+                'name' => $name,
+                'email' =>$email,
+                'password' => '$2y$10$92IXUNpsssxkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'remember_token' => Str::random(10)
+            ]);
+        }
+ 
+        $organization = Organization::where('owner_id', '=', $user->id)->first();
+        if($organization) {
+            $message = ['type'=>'error', 'content'=>'A company exists with the given email address'];
+        } else {
+            $organization = Organization::create([
+                'name' => $name,
+                'owner_id' => $user->id
+            ]);
+            $message = ['type'=>'success', 'content'=>'Company is added Successfully, an email will be send to the address.'];
+        }
+
+        $organization->users()->save($user);
+
+        return ['message'=>$message,'organization'=>$organization];
+        }
+        */
+
     }
 }

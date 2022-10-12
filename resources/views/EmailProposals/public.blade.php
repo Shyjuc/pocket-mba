@@ -35,7 +35,7 @@
                     <ul class="space-y-2">
                         
                         @foreach($proposal->comments as $comment)
-                        {{ dd($comment) }}
+                        
                         <li class="flex justify-start bg-blue-100 shadow-inner shadow-xl">
                           <div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
                             <span class="block">{{ $comment->content }}</span>

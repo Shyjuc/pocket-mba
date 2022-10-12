@@ -62,6 +62,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/kyc/{uuid}', [OrganizationController::class, 'kyc'])->name('kyc');
 Route::patch('/kyc/{uuid}', [OrganizationController::class, 'kycstore'])->name('kycstore');
 
+Route::post('importcsv',[OrganizationController::class, 'csvstore']);
+
 Route::get('/proposal/{uuid}', [ProposalController::class, 'viewproposal'])->name('viewproposal');
 
 require __DIR__.'/auth.php';
