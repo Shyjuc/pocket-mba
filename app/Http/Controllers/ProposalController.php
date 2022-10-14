@@ -13,6 +13,7 @@ use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
 use Auth;
+use DataTables;
 
 
 class ProposalController extends Controller
@@ -22,11 +23,32 @@ class ProposalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         //
         $proposals = ProposalResource::collection(Proposal::get());
         return view('deals.index', ['proposals'=>$proposals]);
+    }
+    
+
+    public function getDatatable(Request $request)
+    {
+        //
+        //$proposals = ProposalResource::collection(Proposal::get());
+        //return view('deals.index', ['proposals'=>$proposals]);
+
+        if ($request->ajax()) {
+            $data = ProposalResource::collection(Proposal::get());
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
     }
 
     /**

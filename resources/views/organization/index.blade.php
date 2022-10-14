@@ -70,7 +70,7 @@
           data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body relative p-4">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('importcsv') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ url('importcsv') }}">
             @csrf
 
             <div class="custom-file">

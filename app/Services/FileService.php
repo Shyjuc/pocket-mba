@@ -64,7 +64,6 @@ class FileService
     // Todo refactor with dependency injection
     public function csvfileUpload($csvfile,$ownerId)
     {  
-
             $fileData2 = $this->uploads($csvfile,'files/license/');
             
             $trade = File::create([
@@ -72,8 +71,10 @@ class FileService
                        'file_path' => $fileData2['filePath'],
                        'user_id' => $ownerId
                     ]);
+
+                    //dd($fileData2['fileName']);
                     
-             return ($trade->id);             
+             return ($fileData2['filePath']);             
                         
     }
 }

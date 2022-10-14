@@ -149,24 +149,21 @@ class OrganizationController extends Controller
         return view('organization.kyc')->with(compact('organization','countries','businessnatures','data'));
     }
 
-    public function csvstore($uuid, Request $request, OrganizationService $OrganizationService, FileService $FileService, OptionService $OptionService)
+    public function csvstore(Request $request, OrganizationService $OrganizationService, FileService $FileService, OptionService $OptionService)
     {
         //dd($uuid);
         // $request->validate([
         //     'trade_license' => 'required|mimes:png,jpeg,pdf|max:2048'
         //     ]);
 
-        $data = $OrganizationService->storecsvOrganization($uuid, $request, $FileService);
+        $data = $OrganizationService->storecsvOrganization($request, $FileService);
 
-       
-        //$message = ['type'=>'success', 'content'=>'Details are submitted successfully'];
-        //return view('organization.kyc')->with(compact('organization','countries', 'message'));
-        $countries       =  (object) Helper::cList();   
-        $organization = Organization::where('uuid',$uuid)->with(['status'])->firstOrFail();
-        $businessnatures = $OptionService->get_business_nature();   
-
-        //return view('organization.kyc')->with($data);
-        return view('organization.kyc')->with(compact('organization','countries','businessnatures','data'));
+        if($data['message']['type']=="success")
+        {
+            return redirect(route('companies.index'));
+        }
+        
+        
     }
 
     /**

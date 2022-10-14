@@ -132,8 +132,14 @@ class OrganizationService
 
     function csvToArray($filename = '', $delimiter = ',')
     {
+
+        //dd($filename);
+
         if (!file_exists($filename) || !is_readable($filename))
+        {
             return false;
+        }
+            
 
         $header = null;
         $data = array();
@@ -152,7 +158,7 @@ class OrganizationService
         return $data;
     }
 
-    public function storecsvOrganization($uuid, Request $request, $FileService)
+    public function storecsvOrganization(Request $request, $FileService)
     {
         $request->validate([
             'csv_file.*' => 'mimetypes:csv'
@@ -160,25 +166,25 @@ class OrganizationService
 
         $current_user = Auth::user();
 
+        //dd($csvfile);
+
         if($request->file('csv_file'))
         {
-            $trade = $FileService->tradefileUpload($request->file('trade_license'),$current_user->id);
+            $csvfile = $FileService->csvfileUpload($request->file('csv_file'),$current_user->id);
             //$companies->trade_license_file_id = $trade;
         }
 
-        $file = public_path('files/license/'.$request->file('trade_license')); 
+        //$file = public_path('files/license/'.$csvfile); 
 
-        $customerArr = $this->csvToArray($file);
+    
+        $customerArr = $this->csvToArray($csvfile);
 
-        //dd($customerArr);
-
-        /*
+        
+        
         for ($i = 0; $i < count($customerArr); $i ++)
         {
-            User::firstOrCreate($customerArr[$i]);
-
-            $name = $customerArr[$i][0];
-            $email = $customerArr[$i][1];
+            $name = $customerArr[$i]['Name'];
+            $email = $customerArr[$i]['Email'];
 
             $user = User::where('email',$email)->first();
             $message = false;
@@ -206,9 +212,9 @@ class OrganizationService
 
         $organization->users()->save($user);
 
-        return ['message'=>$message,'organization'=>$organization];
+        
         }
-        */
-
+        
+        return ['message'=>$message];
     }
 }

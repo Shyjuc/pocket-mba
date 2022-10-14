@@ -62,7 +62,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/kyc/{uuid}', [OrganizationController::class, 'kyc'])->name('kyc');
 Route::patch('/kyc/{uuid}', [OrganizationController::class, 'kycstore'])->name('kycstore');
 
-Route::post('importcsv',[OrganizationController::class, 'csvstore']);
+Route::post('importcsv',[OrganizationController::class, 'csvstore'])->name('csvstore');
+
+//Route::post('importcsv', 'OrganizationController@csvstore')->name('csvstore');
 
 Route::get('/proposal/{uuid}', [ProposalController::class, 'viewproposal'])->name('viewproposal');
 
