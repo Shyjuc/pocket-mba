@@ -13,7 +13,8 @@ use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
 use Auth;
-use DataTables;
+//use DataTables;
+use Yajra\DataTables\Facades\DataTables;
 
 
 class ProposalController extends Controller
@@ -37,6 +38,8 @@ class ProposalController extends Controller
         //
         //$proposals = ProposalResource::collection(Proposal::get());
         //return view('deals.index', ['proposals'=>$proposals]);
+
+        dd($request);
 
         if ($request->ajax()) {
             $data = ProposalResource::collection(Proposal::get());

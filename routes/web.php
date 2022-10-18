@@ -73,3 +73,7 @@ require __DIR__.'/auth.php';
 Route::get('proposal-public/{id}', [ProposalController::class, 'publicUrl']);
 
 Route::post('proposal-action/{uuid}', [ProposalController::class, 'proposalAction'])->name('proposalAction');
+
+//Route::get('deals/list', [ProposalController::class, 'getDatatable']);
+Route::get('deals/list', [ProposalController::class, 'getDatatable'])->name('deals.list');
+//Route::get('dealslist', 'App\Http\Controllers\ProposalController@getDatatable')->name('dealslist');
