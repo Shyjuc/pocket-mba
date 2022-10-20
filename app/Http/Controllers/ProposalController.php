@@ -39,10 +39,24 @@ class ProposalController extends Controller
         //$proposals = ProposalResource::collection(Proposal::get());
         //return view('deals.index', ['proposals'=>$proposals]);
 
-        dd($request);
+        //dd($request);
 
         if ($request->ajax()) {
-            $data = ProposalResource::collection(Proposal::get());
+            //$data = ProposalResource::collection(Proposal::get());
+            $data = ProposalResource::collection(Proposal::with(['category', 'organization', 'status'])->get());
+            //$data = Proposal::with('category')->get();
+
+            //dd($data);
+            /*
+            $datas = array(
+                'id'    => $data->id,
+                'title'  => $data->title,
+                'category_id'  => $data->category_id
+            );
+            */
+
+            
+
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){

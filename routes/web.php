@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/data', function () {
+    return view('deals.welcome');
+});
+
 Route::get('/test', function () {
     $proposal = App\Models\Proposal::find(1);
     //dd($proposal->comments);
@@ -75,5 +79,6 @@ Route::get('proposal-public/{id}', [ProposalController::class, 'publicUrl']);
 Route::post('proposal-action/{uuid}', [ProposalController::class, 'proposalAction'])->name('proposalAction');
 
 //Route::get('deals/list', [ProposalController::class, 'getDatatable']);
-Route::get('deals/list', [ProposalController::class, 'getDatatable'])->name('deals.list');
+Route::get('dealslist', [ProposalController::class, 'getDatatable'])->name('dealslist');
+
 //Route::get('dealslist', 'App\Http\Controllers\ProposalController@getDatatable')->name('dealslist');
