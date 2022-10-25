@@ -23,7 +23,7 @@
                         @endif
                     <div class="p-6 bg-white border-b border-gray-200" style="min-height: 300px">
                         <img src="{{ asset( $company->header_image->media_path) }}" class="object-cover w-100" style="max-height: 200px; width:100%;">
-                        <form method="POST" action="{{ route('deals.store') }}">
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('deals.store') }}">
                             @csrf
                             @method('POST')
                             
@@ -77,6 +77,12 @@
                                     <x-label for="description" :value="__('Description')" />
                                     <x-trix-field id="description" name="description" />
                                 </div>
+
+                                <div class="custom-file">
+                                    <x-label for="deals_image" :value="__('Attach Image')" />
+                                    <input type="file" name="deals_image" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="deals_image">
+                                </div>
+
                                 <div>
                                     
                                 </div>

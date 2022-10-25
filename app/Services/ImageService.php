@@ -43,4 +43,17 @@ class ImageService
             return ($media->id);            
     }
 
+    public function dealsImageUpload($image)
+    {
+            //$trade_file = $request->file('trade_license');  
+            $fileData = $this->uploads($image,'files/deals/');
+            $media = Gravatar::create([
+                       'media_name' => $fileData['fileName'],
+                       'media_type' => $fileData['fileType'],
+                       'media_path' => $fileData['filePath'],
+                       'media_size' => $fileData['fileSize']
+                    ]);        
+            return ($media->id);            
+    }
+
 }

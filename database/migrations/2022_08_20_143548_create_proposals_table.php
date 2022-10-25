@@ -27,6 +27,7 @@ return new class extends Migration
             $table->integer('stage_id')->unsigned();
             $table->integer('category_id')->unsigned()->index();
             $table->integer('status_id')->unsigned()->nullable();
+            $table->smallInteger('deals_image_id')->nullable()->unsigned();
             $table->date('expiry_date')->nullable()->index();
             $table->timestamps();
             

@@ -9,6 +9,7 @@ use App\Models\ProposalStatus;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 use App\Jobs\NewProposalsNotifyAdminsJob;
 use App\Http\Requests\StoreProposalRequest;
 use App\Http\Requests\UpdateProposalRequest;
@@ -95,8 +96,12 @@ class ProposalService
     }
 
     // Todo refactor with dependency injection.
-    public function createProposal(StoreProposalRequest $request, $OptionService)
+    public function createProposal(StoreProposalRequest $request, $OptionService, $ImageService)
     {
+        $request->validate([
+            'deals_image.*' => 'mimetypes:jpg,png'
+        ]);
+
         // Create user
         $to_organization = Organization::where('id',$request->organization_id)->first();
         $to_user_id = $to_organization->owner_id;
@@ -111,6 +116,8 @@ class ProposalService
         $expiry = $expiry->add(30, 'day');
 
         $uuid = (string) Str::uuid();
+
+        
         
         //dd($uuid);
 
@@ -128,6 +135,12 @@ class ProposalService
         $proposal->stage_id  =   $stage_id;
         $proposal->status_id  =   $status->id;
         $proposal->expiry_date  =   $expiry;
+
+        if($request->file('deals_image'))
+        {
+            $image = $ImageService->dealsImageUpload($request->file('deals_image'));
+            $proposal->deals_image_id = $image;
+        }
 
         $proposal->save();
 

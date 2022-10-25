@@ -22,6 +22,33 @@
                     </x-linkbutton>
                     <div class="bg-white overflow-hidden shadow-sm " style="min-height: 300px">
                     <div class="p-6 bg-white border-b border-gray-200">
+    
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="grid grid-cols-2 gap-4">
+                                <div class="form-group">
+                                    <label><strong>Status :</strong></label>
+                                    <select id='status' class="form-control" style="width: 200px">
+                                        <option value="">--Select Status--</option>
+                                        <option selected value="1">new</option>
+                                        <option value="2">rejected</option>
+                                        <option value="3">accepted</option>
+                                        <option value="4">resubmitted</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><strong>Status :</strong></label>
+                                    <select id='status2' class="form-control" style="width: 200px">
+                                        <option value="">--Select Status--</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">Deactive</option>
+                                    </select>
+                                </div>
+                            </div>  
+                            </div>
+                        </div>
+
+
     <table class="table table-bordered yajra-datatable">
         <thead>
             <tr>
@@ -57,7 +84,14 @@
     var table = $('.yajra-datatable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('dealslist') }}",
+        //ajax: "{{ route('dealslist') }}",
+        ajax: {
+          url: "{{ route('dealslist') }}",
+          data: function (d) {
+                d.status = $('#status').val(),
+                //d.search = $('input[type="search"]').val()
+            },
+        },
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'title', name: 'title'},
@@ -72,6 +106,10 @@
                 searchable: true
             },
         ]
+    });
+
+    $('#status').change(function(){
+        table.draw();
     });
     
   });

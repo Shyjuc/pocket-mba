@@ -53,5 +53,10 @@ class Proposal extends Model
     public function statuses()
     {
        return $this->BelongsToMany('App\Models\Option', 'proposal_statuses', 'proposal_id', 'option_id');
+    }
+
+    public function deals_image()
+    {
+        return $this->belongsTo(Gravatar::class, 'deals_image_id');
     } 
 }

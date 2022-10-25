@@ -8,6 +8,7 @@ use App\Models\Proposal;
 use App\Models\Organization;
 use App\Services\OptionService;
 use App\Services\ProposalService;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProposalResource;
 use App\Http\Requests\StoreProposalRequest;
@@ -46,23 +47,32 @@ class ProposalController extends Controller
             $data = ProposalResource::collection(Proposal::with(['category', 'organization', 'status'])->get());
             //$data = Proposal::with('category')->get();
 
-            //dd($data);
-            /*
-            $datas = array(
-                'id'    => $data->id,
-                'title'  => $data->title,
-                'category_id'  => $data->category_id
-            );
-            */
-
-            
-
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
                     $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
                     return $actionBtn;
                 })
+                
+                /*
+                ->addColumn('status', function($row){
+                    if($row->status){
+                       return '<span class="badge badge-primary">Active</span>';
+                    }else{
+                       return '<span class="badge badge-danger">Deactive</span>';
+                    }
+               })
+               
+               */
+
+               ->filter(function ($instance) use ($request) {
+                        if ($request->get('status') == '1' || $request->get('status') == '2') {
+                            $instance->where('status_id', $request->get('status'));
+                        }
+                    })
+               
+               
+                ->rawColumns(['status'])
                 ->rawColumns(['action'])
                 ->make(true);
         }
@@ -94,10 +104,10 @@ class ProposalController extends Controller
      * @param  \App\Http\Requests\StoreProposalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProposalRequest $request, ProposalService $ProposalService, OptionService $OptionService)
+    public function store(StoreProposalRequest $request, ProposalService $ProposalService, OptionService $OptionService, ImageService $ImageService)
     {
 
-        $data = $ProposalService->createProposal($request,$OptionService);
+        $data = $ProposalService->createProposal($request,$OptionService, $ImageService);
 
         //
         if($data['message']['type']=="success")
