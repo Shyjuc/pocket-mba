@@ -36,7 +36,7 @@ function Pitch() {
         </div>
 
         <p style={{ textAlign:'center' }} >
-        <a href="/Home" id="pitch-more" className="btn-learn-more">View all</a>
+        <a href="/Home" id="pitch-more" className="btn-learn-more">+8 More...</a>
         </p>
 
       </div>

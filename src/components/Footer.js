@@ -12,8 +12,9 @@ function Footer() {
         <h3>Pocket MBA</h3>
         <h4>How it works?</h4>
         <p>
-        Knowledge Exchange Program with Exclusive Membership for Business Owners and MBA Students. All you need is to register yourself on our social communities.
+        Set up your Startup Journey with Pocket MBA worksheets and Presentations. Follow our communities in Facebook and Instagram. Get updated on trending business models.
         </p>
+        <small>Email : info@pocketmba.in</small>
       </div>
 
       <div className="col-lg-3 col-md-6 footer-links">
@@ -40,8 +41,6 @@ function Footer() {
         <div className="social-links mt-3">
           <a href="/Home" className="facebook"><i className="bx bxl-facebook"></i></a>
           <a href="/Home" className="instagram"><i className="bx bxl-instagram"></i></a>
-          <a href="/Home" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-          <a href="/Home" className="twitter"><i className="bx bxl-twitter"></i></a>
         </div>
       </div>
 

@@ -8,7 +8,7 @@ function Solutioninfo() {
 
         <div className="section-title">
           <h2>Solution Slide </h2>
-          <h3>Its not about solution, It’s about you</h3>
+          <h3>Its not just about solution, It’s about You!</h3>
         </div>
 
         <div className="row content">

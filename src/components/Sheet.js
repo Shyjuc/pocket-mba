@@ -8,7 +8,7 @@ function Sheet() {
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">
-          <h2>STARTUP MANAGEMENT TEMPLATES</h2>
+          <h2>STARTUP SPREADSHEETS</h2>
           <p>Evaluate your business decisions and plan your startup journey. Delegate tasks effectively with your Marketing/Sales Team. Collect meaningul datas in relation with market research, lead management and sales.</p>
         </div>
 
@@ -42,7 +42,7 @@ function Sheet() {
         </div>
 
         <p style={{ textAlign:'center' }} >
-        <a href="/Home" id="pitch-more" className="btn-learn-more">View all</a>
+        <a href="/Home" id="pitch-more" className="btn-learn-more">+8 more...</a>
         </p>
         
       </div>

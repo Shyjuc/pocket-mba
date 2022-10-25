@@ -35,49 +35,43 @@ function Article() {
             img='assets/img/market.png' 
             name='How to include your Market Info in Pitch Deck?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/how-to-explain-your-market"
             />
             <ArticleItem
             img='assets/img/traction.png' 
             name='How to design Traction slide in Pitch Deck?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/how-to-speak-about-traction"
             />
             <ArticleItem
             img='assets/img/business-model.png' 
             name='How to present business model in your Pitch Deck?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/what-is-your-business-model"
             />
             <ArticleItem
             img='assets/img/competition.png' 
             name='How to present competition in your Pitch Deck?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/how-to-describe-competition-in-your-market"
             />
             <ArticleItem
             img='assets/img/investment.png' 
             name='How to present funding requirement in your Pitch Deck?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
-            />
-            <ArticleItem
-            img='assets/img/metrics.png' 
-            name='Key metrics you should include in Your Business Plan presentation.'
-            detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/how-to-make-a-deal-in-pitchdeck"
             />
             <ArticleItem
             img='assets/img/go-to-market.png' 
             name='How to present your Go-to-Market Strategy?'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/go-to-market-strategy"
             />
-            <ArticleItem
-            img='assets/img/customer_acq_cost.png' 
-            name='What Is Customer Acquisition Cost? How to present it?'
+              <ArticleItem
+            img='assets/img/metrics.png' 
+            name='Key metrics you should include in Your Business Plan presentation.'
             detail='Enhance digital awareness and get updated on market. Follow the Trends, Sectors and Technology shitf worth watching .'
-            path="/how-to-design-intro-slide"
+            path="/startup-key-metrics"
             />
             
         </div>

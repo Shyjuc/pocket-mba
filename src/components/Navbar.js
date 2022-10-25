@@ -20,13 +20,7 @@ function Navbar() {
           <Link to="/" className='nav-link scrollto active' onClick={closeMobileMenu}>Home</Link>
           </li>
           <li>
-          <Link to="/brand-package" className='nav-link scrollto' onClick={closeMobileMenu}>Brand Kit</Link>
-          </li>
-          <li>
           <Link to="/community" className='nav-link scrollto' onClick={closeMobileMenu}>Community</Link>
-          </li>
-          <li>
-          <Link to="/download" className='nav-link scrollto' onClick={closeMobileMenu}>Download</Link>
           </li>
           <li>
           <Link to="/docs" className='nav-link scrollto' onClick={closeMobileMenu}>Docs</Link>
