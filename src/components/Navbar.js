@@ -15,7 +15,6 @@ function Navbar() {
   const [click,setClick] = useState(false);
 
   const closeMobileMenu = () =>setClick(false);
-  const handleClick = () => setClick(!click);
   return (
     <>
     <header id="header" className="fixed-top">

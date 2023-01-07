@@ -4,7 +4,6 @@ import Home from './components/pages/Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Commune from './components/pages/Commune';
 import Docs from './components/pages/Docs';
-import Download from './components/pages/Download';
 import Consult from './components/pages/Consult';
 import Intro from './components/pages/Intro';
 import Problem from './components/pages/Problem';

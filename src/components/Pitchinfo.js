@@ -6,7 +6,8 @@ import Downloadinfo from './Downloadinfo';
 
 
 function Introinfo() {
-  const [info,useInfo] = useState("download");
+
+  const info = "download";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

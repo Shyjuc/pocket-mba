@@ -4,7 +4,8 @@ import LeftPanel from './LeftPanel'
 
 
 function Introinfo() {
-  const [info,useInfo] = useState("intro");
+
+  const info = "intro";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

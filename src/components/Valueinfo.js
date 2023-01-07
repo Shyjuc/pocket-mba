@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import LeftPanel from './LeftPanel'
 
 function Probleminfo() {
-  const [info,useInfo] = useState("vop");
+
+  const info = "vop";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

@@ -2,7 +2,10 @@ import React,{useState} from 'react'
 import LeftPanel from './LeftPanel'
 
 function Tractioninfo() {
-  const [info,useInfo] = useState("bmodel");
+  //const [info,useInfo] = useState("bmodel");
+
+  const info = "bmodel";
+
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

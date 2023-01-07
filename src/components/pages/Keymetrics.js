@@ -1,5 +1,4 @@
 import React from 'react'
-import HeroBlogSection from '../HeroBlogSection'
 import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
 import Keymetricsinfo from '../Keymetricsinfo'

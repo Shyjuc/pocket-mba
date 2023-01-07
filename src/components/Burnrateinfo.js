@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import LeftPanel from './LeftPanel'
 
 function Probleminfo() {
-  const [info,useInfo] = useState("burnrate");
+
+  const info = "burnrate";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

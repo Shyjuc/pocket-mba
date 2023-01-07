@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import LeftPanel from './LeftPanel'
 
 function Probleminfo() {
-  const [info,useInfo] = useState("exitstrategy");
+
+  const info = "exitstrategy";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

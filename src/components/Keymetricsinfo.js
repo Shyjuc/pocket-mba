@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import LeftPanel from './LeftPanel'
 
 function Tractioninfo() {
-  const [info,useInfo] = useState("metrics");
+
+  const info = "metrics";
   return (
     <>
     <section id="community" className="services" style = {{ marginTop : 100 }}>

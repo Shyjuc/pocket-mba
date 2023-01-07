@@ -6,7 +6,6 @@ import Button from "./sections/Button";
 
 const bogliasco = "../assets/img/slider-bg.png";
 const countyClare = "../assets/img/slider-bg2.png";
-const craterRock = "../assets/img/slider-bg.png";
 const giauPass = "../assets/img/slider-bg2.png";
 
 export default function BasicSlider() {
