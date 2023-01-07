@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../HeroSection'
+import HeroBlogSection from '../HeroBlogSection'
 import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
 import Tractioninfo from '../Tractioninfo'
@@ -7,7 +7,6 @@ import Tractioninfo from '../Tractioninfo'
 function Traction() {
   return (
     <>
-         <HeroSection />
          <main id="main">
           <Tractioninfo />
           <CtaCommunity />

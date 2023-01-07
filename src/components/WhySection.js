@@ -48,6 +48,11 @@ function WhySection() {
                 </li>
 
               </ul>
+              <div className="d-flex justify-content-center justify-content-lg-start">
+              <button className="btn btn-primary btn-lg">
+                Explore Documents
+              </button>
+          </div>
             </div>
 
           </div>

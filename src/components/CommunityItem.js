@@ -7,6 +7,9 @@ function CommunityItem(props) {
             <div className="card-pic"><img src={props.img} className="img-fluid" alt="" /></div>
               <h4>{props.name}</h4>
               <p>{props.detail}</p>
+              <div className="d-flex justify-content-center justify-content-lg-start" style = {{ marginTop : 10 }}>
+              <a href="#about" className="btn btn-primary btn-outline btn-lg">{props.cta}</a>
+              </div>
             </div>
           </div>
   )

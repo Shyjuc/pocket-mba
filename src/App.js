@@ -16,6 +16,14 @@ import Competition from './components/pages/Competition';
 import Investment from './components/pages/Investment';
 import Gotomarket from './components/pages/Gotomarket';
 import Keymetrics from './components/pages/Keymetrics';
+import BrandKit from './components/pages/BrandKit';
+import Pitchdeck from './components/pages/Pitchdeck';
+import Product from './components/pages/Product';
+import Value from './components/pages/Value';
+import Exit from './components/pages/Exit';
+import Roi from './components/pages/Roi';
+import Burnrate from './components/pages/Burnrate';
+import Churnrate from './components/pages/Churnrate';
 
 
 function App() {
@@ -24,10 +32,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/community" element={<Commune />} />
+        <Route path="/services" element={<Commune />} />
         <Route path="/consult" element={<Consult />} />
-        <Route path="/docs" element={<Docs />} />
-        <Route path="/download" element={<Download />} />
+        <Route path="/resources" element={<Docs />} />
+        <Route path="/download" element={<BrandKit />} />
+        <Route path="/download-pitchdeck" element={<Pitchdeck />} />
         <Route path="/how-to-design-intro-slide" element={<Intro />} />
         <Route path="/how-to-design-problem-slide" element={<Problem />} />
         <Route path="/how-to-design-solution-slide" element={<Solution />} />
@@ -38,6 +47,12 @@ function App() {
         <Route path="/how-to-make-a-deal-in-pitchdeck" element={<Investment />} />
         <Route path="/go-to-market-strategy" element={<Gotomarket />} />
         <Route path="/startup-key-metrics" element={<Keymetrics />} />
+        <Route path="/design-your-product-slide" element={<Product />} />
+        <Route path="/design-your-value-proposition-slide" element={<Value />} />
+        <Route path="/design-your-exit-strategy-slide" element={<Exit />} />
+        <Route path="/what-is-return-on-investment" element={<Roi />} />
+        <Route path="/what-is-burn-rate" element={<Burnrate />} />
+        <Route path="/what-is-churn-rate" element={<Churnrate />} />
       </Routes>
     </Router>
   );

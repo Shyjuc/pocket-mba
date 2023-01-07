@@ -1,22 +1,14 @@
 import React from 'react'
-import FounderKit from '../FounderKit'
-import HeroFounder from '../HeroFounder'
-import Pitch from '../Pitch'
-import Sheet from '../Sheet'
-import Faq from '../Faq'
+import HeroSlider from '../HeroSlider'
 import WhySection from '../WhySection'
 import Footer from '../Footer'
 
 function Home() {
   return (
     <>
-         <HeroFounder />
-         <main id="main">
-          <FounderKit />
-          <Pitch />
-          <Sheet />
+          <HeroSlider />
           <WhySection />
-          <Faq />
+         <main id="main">
           <Footer />
          </main>
     </>

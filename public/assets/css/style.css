@@ -438,6 +438,119 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+
+/*--------------------------------------------------------------
+# Heroplance Section
+--------------------------------------------------------------*/
+
+
+#heroplane {
+  width: 100%;
+  height: 80vh;
+  background: #83a4d4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+}
+#heroplane .container {
+  padding-top: 72px;
+}
+#heroplane h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #333333;
+}
+#heroplane h2 {
+  color: #333333;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+#heroplane p {
+  color: #333333;
+  font-size: 16px;
+}
+#heroplane .btn-get-started {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #ffffff;
+  background: #316be8;
+}
+#heroplane .btn-get-started:hover {
+  background: #316be8;
+}
+#heroplane .btn-watch-video {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  margin: 10px 0 0 25px;
+  color: #316be8;
+  line-height: 1;
+  border:2px solid #316be8;
+  border-radius:20px;
+  padding: 0px 20px;
+}
+#heroplane .btn-watch-video i {
+  line-height: 0;
+  color: #fff;
+  font-size: 32px;
+  transition: 0.3s;
+  margin-right: 8px;
+}
+#heroplane .btn-watch-video:hover i {
+  color: #47b2e4;
+}
+#heroplane .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@media (max-width: 991px) {
+  #heroplane {
+    height: 100vh;
+    text-align: center;
+  }
+  #heroplane .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+  #heroplane .hero-img {
+    text-align: center;
+  }
+  #heroplane .hero-img img {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #heroplane h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #heroplane h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #heroplane .hero-img img {
+    width: 70%;
+  }
+}
+@media (max-width: 575px) {
+  #heroplane .hero-img img {
+    width: 80%;
+  }
+  #heroplane .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+  }
+}
+
 @-webkit-keyframes up-down {
   0% {
     transform: translateY(10px);

@@ -1,19 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
+import LeftPanel from './LeftPanel'
+
+
 
 function Introinfo() {
+  const [info,useInfo] = useState("intro");
   return (
     <>
-    <section id="community" className="services">
-      <div className="container" data-aos="fade-up">
-
-        <div className="section-title">
-          <h2>Problem Slide </h2>
+    <section id="community" className="services" style = {{ marginTop : 100 }}>
+      <div className="container d-flex align-items-start" data-aos="fade-up">
+      <div className="col-lg-3 d-flex justify-content-left align-items-top  order-2 order-lg-1">
+        <LeftPanel panel={info}/>
+      </div>
+      <div className="col-lg-9 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+      <div className="section-title">
+          <h2>Yes, You need something more than a company logo</h2>
           <h3>Market Opportunities are identified on Clearly defined problems</h3>
         </div>
 
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div className="icon-box">
+            <div>
+              <p>Every now and then, a recurring nature had been observed among the people in context with brewing up their passion. Since hybrid work scenario and work automation are on the rise, those who are interested in turning their passion into reality must start somewhere. Whoever is willing to start a business venture, set up a personal brand, work towards creating an influential space, or look ahead to fuel the self-employment journey must utilize the time to get things on track. Whatever the purpose, there’s a need to push the stuff in the coming year.</p>
+              <p>In today’s creative world, unlike some pre-defined careers, youth are moving on to explore new age opportunities such as writers, content creators, influencers, performers, artist, etc. Modern day individuals want to give a try to new challenges every day. Present time is calling upon the individuals who are scrolling the possibilities that allow them to build up a personal brand and enthrall to reach up more connectivity and revenue in exchange.</p>
+              <p>Post-COVID, things have changed to a great extent for aspiring people. Issues like the ongoing recession, side-hustle culture, and growing internal competition have created turmoil around an employee to think something different. On the other side, entrepreneurs are no exception to these challenges. They roam around various stages, from ideation to product launch to funding, including planning several activities.</p>
+              <p>For them, here comes a set of documents that help with everything from idea validation to product launch to managing funding. It also processes pitch deck presentations that include ready-to-use templates with proper guidelines.</p>
               <p>How do you identify a customer problem, When you are planning to go ahead with a potential business idea?</p>
               <p>This is the real starting point. Successful businessmen identify this scenario and respond quickly with their solution. Everything you build up as a strategic business plan is originated at this critical stage. So don’t rush to identify a market opportunity with a minimal understanding about your customer problem and its available solutions.</p>
               <p>Your problem slide should express deep understanding about customer’s pain points and its existing solutions. It should be easily relatable, anyone could understand in simple words. </p>
@@ -38,7 +49,7 @@ function Introinfo() {
           </div>
             
         </div>
-
+        </div>
       </div>
     </section>
     </>

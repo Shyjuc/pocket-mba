@@ -1,30 +1,36 @@
-import React from 'react'
+import React,{useState} from 'react'
+import LeftPanel from './LeftPanel'
 
 function Tractioninfo() {
+  const [info,useInfo] = useState("traction");
   return (
     <>
-    <section id="community" className="services">
-      <div className="container" data-aos="fade-up">
-
+    <section id="community" className="services" style = {{ marginTop : 100 }}>
+      <div className="container d-flex align-items-start" data-aos="fade-up">
+      <div className="col-lg-3 d-flex justify-content-left align-items-top  order-2 order-lg-1">
+        <LeftPanel panel={info}/>
+      </div>
+      <div className="col-lg-9 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
         <div className="section-title">
-          <h2>Traction Slide </h2>
-          <h3>Progress and momentum of Your Company</h3>
+          <h2>Numbers are the most important indicator of performance </h2>
+          <h3>Most of the investors pause in the traction slide! They look at the numbers and decide whether they should invest or not in this company. Because traction slide speaks everything about progress and momentum of your company</h3>
         </div>
 
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div className="icon-box">
-              <p>Business traction is commonly observed as the progress and momentum of a startup company. If you have no traction, you have no consistent users, and no way to generate money. If you have consistent users, traction, you will have an opportunity to make money.</p>
-              <p>In simple words, A company gets traction when they get customers and revenue. Running a business is a lot like running a vehicle. Ideally when you rev the engine and it is in gear, there is forward momentum. With a company, so much goes into making it work, but a lack of traction means the company is not getting any forward momentum</p>
+            <div>
+              <p>Known as the "killer slide" in your pitch deck, it shows the investors what you have achieved so far. This makes a significant difference when displayed as a line graph. Remember that the larger, the steeper, the better option for displaying the metrics. Thus, visualize it thoroughly.</p>
+              <p>Traction implies consistent users and the opportunity to make money. Generally, a company gets traction when it gets customers and revenue. Running a business works like an engine that, when in gear, creates forward momentum. When there is no traction, there is no momentum.</p>
               <h4>How to gain traction?</h4>
-              <p>Getting initial Traction means investing in Relatioships. This is best done face-to-face over a meeting, but 30-minute Zoom Meeting, calls or Google Meet also work.To get these opportunities you'll have to go out and find them and engage them in live events (meetups, conferences) or share helpful content and guides on places they usually hang out like WhatsApp/LinkedIn groups, Online communities on Quora questions</p>
+              <p>Initial traction means working on relationships. A face-to-face meeting is best for this. Also, Zoom meetings, Google Meet, or phone calls work accordingly. Traction comes in when you move ahead and engage in live events, share guides and helpful contents, and do a common hangout through social groups such as WhatsApp, LinkedIn, etc.</p>
               <h4>Best practices</h4>
               <ul>
-                <li>To get your initial customers you need to hyper-niche and show how your product is making an impact in that community</li>
-                <li>Quantity over quality for everything. Highlight all the numbers that matters over a period of time.</li>
-                <li>Focus more one Paying customers or convertable customers</li>
-                <li>Use relevant numbers that highlightgrowth.</li>
-                <li>Note percentage of conversion under various matrix. E.g: Registered users Vs Subscribers. Free trial to subscription rate etc.</li>
+              <li>Identify your market with clarity!</li>
+              <li>Target your hyper-niche initial customers and display how your product is worthy.</li>
+              <li>Cover up all the metrics collected by now.</li>
+              <li>Focus on convertible or paying customers.</li>
+              <li>Use a relevant number to highlight the growth.</li>
+              <li>Notify conversion percentages based on various matrices, such as registered users, subscribers, free trail subscribers, etc.</li>
               </ul>
               <h4>What all you can include?</h4>
                 <ul>
@@ -40,7 +46,7 @@ function Tractioninfo() {
           </div>
             
         </div>
-
+        </div>
       </div>
     </section>
     </>

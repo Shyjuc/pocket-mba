@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from '../HeroSection'
+import HeroBlogSection from '../HeroBlogSection'
 import CtaCommunity from '../CtaCommunity'
 import Footer from '../Footer'
 import Marketinfo from '../Marketinfo'
@@ -7,7 +7,6 @@ import Marketinfo from '../Marketinfo'
 function Market() {
   return (
     <>
-         <HeroSection />
          <main id="main">
           <Marketinfo />
           <CtaCommunity />

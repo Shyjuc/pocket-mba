@@ -7,7 +7,6 @@ import Community from '../Community'
 function Commune() {
   return (
     <>
-         <HeroSection />
          <main id="main">
           <Community />
           <CtaCommunity />

@@ -1,45 +1,50 @@
-import React from 'react'
+import React,{useState} from 'react'
+import LeftPanel from './LeftPanel'
 
 function Probleminfo() {
+  const [info,useInfo] = useState("problem");
   return (
     <>
-    <section id="community" className="services">
-      <div className="container" data-aos="fade-up">
-
+    <section id="community" className="services" style = {{ marginTop : 100 }}>
+      <div className="container d-flex align-items-start" data-aos="fade-up">
+      <div className="col-lg-3 d-flex justify-content-left align-items-start  order-2 order-lg-1">
+        <LeftPanel panel={info}/>
+      </div>
+      <div className="col-lg-9 d-flex flex-column justify-content-center align-baseline order-2 order-lg-1">
         <div className="section-title">
-          <h2>Problem Slide </h2>
-          <h3>Market Opportunities are identified on Clearly defined problems</h3>
+          <h2>Market Opportunities are identified on Clearly defined problems</h2>
+          <h3>An intelligent investor can understand about your market awareness from the way you understand and present customer's headache</h3>
         </div>
 
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div className="icon-box">
+            <div>
               <p>How do you identify a customer problem, When you are planning to go ahead with a potential business idea?</p>
               <p>This is the real starting point. Successful businessmen identify this scenario and respond quickly with their solution. Everything you build up as a strategic business plan is originated at this critical stage. So don’t rush to identify a market opportunity with a minimal understanding about your customer problem and its available solutions.</p>
               <p>Your problem slide should express deep understanding about customer’s pain points and its existing solutions. It should be easily relatable, anyone could understand in simple words. </p>
+              <p>That's what the problem-solving slide does: it directs you to your true starting point. This is where you develop a strategic business plan that turns around the root cause of the problem faced by the customers along with the prospective solution in the form of your product. The problem stage should be built around the customer’s pain points in collaboration with the existing solutions. Keep it easy to read and understand by using simple words.</p>
               <h4>Best practices</h4>
               <ul>
-                <li><b>Tell your story. But why?</b> When you are communicating with a new investor, you are a perfect stranger. You start everything in a formal way. It is really important upto what extend will you be able to go beyond the formal space and converse things in a friendly space! Make them relatable. Make them emotionally connected. Make them imagine things while you are explaining. </li>
-                <li>Address your target customers. This is a powerful hack to bring investor’s attention to the crust of the problem. Define your target customers clearly to convince the context of the problem</li>
-                <li>A sentence with maximum 10-15 words or three bullet points</li>
-                <li>It is a great idea to describe how you have initially invested time and energy in exploring and verifying this problem.</li>
-                <li>Try to address the available alternatives or how customer’s find an imperfect solution</li>
-                <li>Share any relevant statistics, social proof or market numbers to validate your statement</li>
+                <li><b>Tell your story. But why?</b> To begin with, build up a story. Make the transition from formal to friendly, making the investors relatable and connected to your content. Use visual cues to help them imagine the problem and the solutions. </li>
+                <li>Put your investors in the customer’s shoes. Be clear on defining and targeting customers, and bring investors' attention to what you have available as a possible and effective solution.</li>
+                <li>Summarize the problem in 2–3 bullet points.</li>
+                <li>Visualize your research efforts in exploring and validating the problem.</li>
+                <li>Validate your statement with relevant data.</li>
               </ul>
               <h4>Don't do this</h4>
-                <p>Remember you are addressing customer’s pain points here and you should bring their perspective here. That’s how you can make it more relatable and convincing to your investors. However, One possible mistake happens when you concentrate more on product features. Whatever you feel as a limitation in the features of a product might not be a painful customer problem. Or whatever you feel as a void in the market might not be a thing that addresses a customer problem</p>
+                <p>Bring in the customer’s problem areas and perspectives in your pitch desk presentation. Focus on making it relatable and convincing to the investors.</p>
                 <ul>
-                    <li>If your problem needs a detailed explanation, you should rethink that scenario! One simple sentence you can express with minimum 10 words or 3 bullet points. That’s the limit. Whenever your explanation doubles these limits, please understand one thing. There is lack of clarity from your side</li>
-                    <li>Don’t try to explain the scenario with technical terms and business jargons.</li>
-                    <li>Don’t jump into solution in this slide. Let your investors understand the real problem scenario</li>
-                    <li>Don’t go ahead if you are not addressing a significant problem! In that case, either your concerned problem would be too small or users might not be willing to pay to solve that problem</li>
+                    <li>Remember, you do not need to explain the features of the product. Concentrate on the issues and solutions that customers are looking for.</li>
+                    <li>Clarify your point using crisp language. Don't go into it in detail. Keep it brief and to the point, with no more than three bullet points.</li>
+                    <li>Focus on the real-problem scenario. Don’t shift your concentration to providing the solution on this slide.</li>
+                    <li>Showcase the buyer’s problem effectively. If you don’t find it significant, avoid taking it further.</li>
                 </ul>
             </div>
           </div>
             
         </div>
-
-      </div>
+        </div>
+        </div>
     </section>
     </>
   )
