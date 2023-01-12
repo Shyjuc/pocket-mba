@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import solutionslide from "../assets/img/solution_slide.png";
 
 function Solutioninfo() {
 
@@ -20,7 +21,8 @@ function Solutioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>In a practical real life scenario, an investor learn more about you in this slide. They observe how intelligent you are, your knowledge background, technical skills, confidence level; everything that want to understand as an investor. This slide gives a key insight about it. From this slide, they decide whether they should remain passive or attentive for the remaining slides</p>
+            <img src={solutionslide} class="img-fluid" alt="Solution Slide"/>
+              <p style = {{ marginTop : 50 }}>In a practical real life scenario, an investor learn more about you in this slide. They observe how intelligent you are, your knowledge background, technical skills, confidence level; everything that want to understand as an investor. This slide gives a key insight about it. From this slide, they decide whether they should remain passive or attentive for the remaining slides</p>
               <p>Most founders don’t get this. They are blind to it. The solution slide is the most important part of not only your pitch, but your business as well. Identifying and presenting the solution can make a world of difference in developing a business concept.</p>
               <p>Once the problem is solved, it’s high time for a viable solution. This slide is meant to make the investor learn about the solution to the problem stated and why you and your team are the best choice for this. On this slide, you need to elaborate yourself. Simply wow your audience, i.e., investors, and make them believe in your business. This slide will decide whether the investors will stay back for further slides or remove it</p>
               <p>Through this slide, your knowledge, business approach, and confidence will be observed. How you identify the solution and how you present it will create a lasting impact on the investors.</p>

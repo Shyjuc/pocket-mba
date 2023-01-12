@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import problemslide from "../assets/img/problem_slide.png";
 
 function Probleminfo() {
 
@@ -20,7 +21,8 @@ function Probleminfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>How do you identify a customer problem, When you are planning to go ahead with a potential business idea?</p>
+            <img src={problemslide} class="img-fluid" alt="Problem Slide"/>
+              <p style = {{ marginTop : 50 }}>How do you identify a customer problem, When you are planning to go ahead with a potential business idea?</p>
               <p>This is the real starting point. Successful businessmen identify this scenario and respond quickly with their solution. Everything you build up as a strategic business plan is originated at this critical stage. So don’t rush to identify a market opportunity with a minimal understanding about your customer problem and its available solutions.</p>
               <p>Your problem slide should express deep understanding about customer’s pain points and its existing solutions. It should be easily relatable, anyone could understand in simple words. </p>
               <p>That's what the problem-solving slide does: it directs you to your true starting point. This is where you develop a strategic business plan that turns around the root cause of the problem faced by the customers along with the prospective solution in the form of your product. The problem stage should be built around the customer’s pain points in collaboration with the existing solutions. Keep it easy to read and understand by using simple words.</p>

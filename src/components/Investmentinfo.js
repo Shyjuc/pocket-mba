@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import investmentslide from "../assets/img/investment_slide.png";
 
 function Tractioninfo() {
 
@@ -20,7 +21,8 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>AT the end od every pitch deck it's your turn to ask for what you are expecting from the investors and how much share you are willing to dilute in exchange of that deal. You need to consider various factors while reacing to this figure. Even if you are asking for a short term cash burn, you need to cnonsider overall position of your company minimum 5-10years forward.</p>
+            <img src={investmentslide} class="img-fluid" alt="Investment Slide"/>
+              <p style = {{ marginTop : 50 }}>AT the end od every pitch deck it's your turn to ask for what you are expecting from the investors and how much share you are willing to dilute in exchange of that deal. You need to consider various factors while reacing to this figure. Even if you are asking for a short term cash burn, you need to cnonsider overall position of your company minimum 5-10years forward.</p>
               <p>Investors need confirmation that founders know their stuff. In other way, Investors are not just validating the viability of your idea, they need to trust you and make sure that investment is going into safe hands. The Competition slide should prove that founders are self-aware, mindful of what sets them apart from the rest of the crowd. They must be sold on that vision and believe that this team has a real chance to become a key player in the so pictured market.</p>
               <p>Here comes the end of the pitch deck that displays your call from the investors. In this slide, you will outline your expectations from the investors and mention the share that can dilute the deal. To reach out to a figure, you need to work on various factors. Even if there’s a need for short-term cash burn, you should consider the company’s position 5–10 years from now.</p>
               <p>This slide is about asking for investment by creating trust in the investors that their money is in safe hands. Investors look for confirmation that founders are mindful of their stuff. They react to the vision and proceed by looking at the probable chances showcased by the team in the context of the key player in the market.</p>

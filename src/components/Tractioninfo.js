@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import tractionslide from "../assets/img/traction_slide.png";
 
 function Tractioninfo() {
 
@@ -20,7 +21,8 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>Known as the "killer slide" in your pitch deck, it shows the investors what you have achieved so far. This makes a significant difference when displayed as a line graph. Remember that the larger, the steeper, the better option for displaying the metrics. Thus, visualize it thoroughly.</p>
+              <img src={tractionslide} class="img-fluid" alt="Traction Slide"/>
+              <p style = {{ marginTop : 50 }}>Known as the "killer slide" in your pitch deck, it shows the investors what you have achieved so far. This makes a significant difference when displayed as a line graph. Remember that the larger, the steeper, the better option for displaying the metrics. Thus, visualize it thoroughly.</p>
               <p>Traction implies consistent users and the opportunity to make money. Generally, a company gets traction when it gets customers and revenue. Running a business works like an engine that, when in gear, creates forward momentum. When there is no traction, there is no momentum.</p>
               <h4>How to gain traction?</h4>
               <p>Initial traction means working on relationships. A face-to-face meeting is best for this. Also, Zoom meetings, Google Meet, or phone calls work accordingly. Traction comes in when you move ahead and engage in live events, share guides and helpful contents, and do a common hangout through social groups such as WhatsApp, LinkedIn, etc.</p>

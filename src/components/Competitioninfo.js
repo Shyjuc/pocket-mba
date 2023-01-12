@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import competitionslide from "../assets/img/competition_slide.png";
 
 function Tractioninfo() {
 
@@ -20,7 +21,8 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>This slide will ask for a product comparison in a visually engaging mode. It must show the effect on the industry, market share distribution, and who your competitors are.</p>
+            <img src={competitionslide} class="img-fluid" alt="Competition Slide"/>
+              <p style = {{ marginTop : 50 }}>This slide will ask for a product comparison in a visually engaging mode. It must show the effect on the industry, market share distribution, and who your competitors are.</p>
               <p>Investors need confirmation that founders know their stuff. In other way, Investors are not just validating the viability of your idea, they need to trust you and make sure that investment is going into safe hands. The Competition slide should prove that founders are self-aware, mindful of what sets them apart from the rest of the crowd. They must be sold on that vision and believe that this team has a real chance to become a key player in the so pictured market.</p>
               <p>This slide is a confirmation of your mindfulness toward your business idea. It helps the investors generate trust in your venture. This competition slide is an overview of your self-awareness and vision towards creating an example in the business world.</p>
               <h4>In Competition slide, Include these things in General:</h4>

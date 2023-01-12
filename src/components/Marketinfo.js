@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import marketslide from "../assets/img/market_slide.png";
 
 function Tractioninfo() {
 
@@ -20,7 +21,8 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-                <h4>Identify your market with clarity!</h4>
+              <img src={marketslide} class="img-fluid" alt="Market Slide"/>
+                <h4 style = {{ marginTop : 50 }}>Identify your market with clarity!</h4>
                 <p>Check out the gap that your product can fill. In other words, find the market that is interested in filling the gap. Make a slide for that.</p>
                 <p>While making the slide, be sure to consider customer needs. It forms the market. Thus, identify the market by asking yourself these questions:</p>
                 <ul>

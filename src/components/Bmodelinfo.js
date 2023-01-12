@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftPanel from './LeftPanel'
+import bmodelslide from "../assets/img/bmodel_slide.png";
 
 function Tractioninfo() {
   //const [info,useInfo] = useState("bmodel");
@@ -22,7 +23,8 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <p>This slide will notify the investors about your idea to make a profit. It will include information like products and services your company plans to sell, targeted markets, pricing strategies, and estimated expenses. A business model is based on the value proposition, which focuses on the goods and services provided by the company in comparison to competitors, as well as the reason for demand among customers or clients.
+            <img src={bmodelslide} class="img-fluid" alt="Business Model Slide"/>
+              <p style = {{ marginTop : 50 }}>This slide will notify the investors about your idea to make a profit. It will include information like products and services your company plans to sell, targeted markets, pricing strategies, and estimated expenses. A business model is based on the value proposition, which focuses on the goods and services provided by the company in comparison to competitors, as well as the reason for demand among customers or clients.
 </p>
               <p>The term business model refers to a company's plan for making a profit. It identifies the products or services the business plans to sell, its identified target market, and any anticipated expenses.</p>
               <p>Business Models generally include information like products or services the business plans to sell, target markets, pricing strategies and any anticipated expenses. There are dozens of types of business models including retailers, manufacturers, fee-for-service, or freemium providers.</p>

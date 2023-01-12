@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.img-fluid {
+  border-radius: 12px !important;
+  border:0px !important;
+  --webkit-box-shadow: 1px 10px 10px 1px #9C9C9C !important;
+  box-shadow: 1px 10px 10px 1px #9C9C9C !important;
+}
