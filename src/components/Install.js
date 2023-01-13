@@ -1,8 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 import {
-  Button,
   Grid,
   Header,
   Image,
@@ -60,7 +58,7 @@ function Install() {
             <div class="ui buttons">
               <button class="ui button" onClick={onButtonClick}>Download template</button>
               <div class="or"></div>
-              <a href="https://shyjuchathampalli.myinstamojo.com/product/3464345/pitch-deck-kit-for-startupsme-founders/" target="_blank" className='ui positive button'>Buy Pitch deck kit</a>
+              <a href="https://shyjuchathampalli.myinstamojo.com/product/3464345/pitch-deck-kit-for-startupsme-founders/" rel="noreferrer" target="_blank" className='ui positive button'>Buy Pitch deck kit</a>
             </div>
           </Grid.Column>
         </Grid.Row>
