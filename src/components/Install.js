@@ -22,7 +22,7 @@ function Install() {
             // Setting various property values
             let alink = document.createElement('a');
             alink.href = fileURL;
-            alink.download = 'pizzaroma-menu.pdf';
+            alink.download = 'Pitchdeck_Simple_startup_intro.ppt';
             alink.click();
         })
     })
