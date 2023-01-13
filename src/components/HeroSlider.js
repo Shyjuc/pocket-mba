@@ -2,7 +2,6 @@ import HeroSlider, { Overlay, Slide, MenuNav } from "hero-slider";
 import Wrapper from "./sections/Wrapper";
 import Title from "./sections/Title";
 import Subtitle from "./sections/Subtitle";
-import Button from "./sections/Button";
 import {Link} from 'react-router-dom'
 
 const bogliasco = "../assets/img/slider-bg.png";
