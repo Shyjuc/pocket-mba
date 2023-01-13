@@ -3,6 +3,7 @@ import Wrapper from "./sections/Wrapper";
 import Title from "./sections/Title";
 import Subtitle from "./sections/Subtitle";
 import Button from "./sections/Button";
+import {Link} from 'react-router-dom'
 
 const bogliasco = "../assets/img/slider-bg.png";
 const countyClare = "../assets/img/slider-bg2.png";
@@ -35,7 +36,7 @@ export default function BasicSlider() {
           <Subtitle>
            Start with our Pitchdeck documentation and templates.
           </Subtitle>
-          <Button>Get Started Now</Button>
+          <Link to="/download-pitchdeck" className='btn btn-success btn-lg'  style = {{ marginTop : 30 }}>Get Started Now</Link>
         </Wrapper>
       </Overlay>
 

@@ -22,7 +22,7 @@ function Navbar() {
     <header id="header" className="fixed-top">
     <div className="container d-flex align-items-center full-width" style={{ justifyContent : 'flex-end', width: '100%' }}>
       
-    <img src={logo} className="img-fluid animated left floated" alt="Pocket MBA" />
+    <img src={logo} className="animated left floated" alt="Pocket MBA" />
     <div onClick={handleNav} className='d-block d-lg-none' style={{ float:'right', marginLeft:'10px' }}>
         {nav ? <AiOutlineClose color="white" size={20}/> : <AiOutlineMenu color="white" size={20} />}
         </div>  

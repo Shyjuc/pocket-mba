@@ -33,7 +33,7 @@ function Tractioninfo() {
                 <li>Future role prospects in your company</li>
               </ul>
               <p>While handling the share dilution, the above factors are good to consider.</p>
-              <h4>While considering the amount you need, these factors are important.</h4>
+              <h2>While considering the amount you need, these factors are important.</h2>
                 <ul>
                 <li>What’s the price range you are seeking?</li>
                 <li>For how long will the money last?</li>

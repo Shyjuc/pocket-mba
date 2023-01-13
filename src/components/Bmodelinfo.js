@@ -28,14 +28,14 @@ function Tractioninfo() {
 </p>
               <p>The term business model refers to a company's plan for making a profit. It identifies the products or services the business plans to sell, its identified target market, and any anticipated expenses.</p>
               <p>Business Models generally include information like products or services the business plans to sell, target markets, pricing strategies and any anticipated expenses. There are dozens of types of business models including retailers, manufacturers, fee-for-service, or freemium providers.</p>
-              <h4>In general, a business model explains four things:</h4>
+              <h2>In general, a business model explains four things:</h2>
                 <ul>
                 <li>What are the products and services offered by the company?</li>
                 <li>How about the marketing strategy?</li>
                 <li>What expenses will it require?</li>
                 <li>How does the company intend to make money?</li>
                 </ul>
-                <h4>How to design a business model?</h4>
+                <h2>How to design a business model?</h2>
                 <ul>
                 <li>Outline the revenue streams through which your company plans to generate revenue.</li>
                 <li>Identify the ways to measure success. Note down the costs to acquire a customer or how many times customers have repurchased.</li>

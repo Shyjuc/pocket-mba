@@ -26,7 +26,7 @@ function Probleminfo() {
               <p>This is the real starting point. Successful businessmen identify this scenario and respond quickly with their solution. Everything you build up as a strategic business plan is originated at this critical stage. So don’t rush to identify a market opportunity with a minimal understanding about your customer problem and its available solutions.</p>
               <p>Your problem slide should express deep understanding about customer’s pain points and its existing solutions. It should be easily relatable, anyone could understand in simple words. </p>
               <p>That's what the problem-solving slide does: it directs you to your true starting point. This is where you develop a strategic business plan that turns around the root cause of the problem faced by the customers along with the prospective solution in the form of your product. The problem stage should be built around the customer’s pain points in collaboration with the existing solutions. Keep it easy to read and understand by using simple words.</p>
-              <h4>Best practices</h4>
+              <h2>Best practices</h2>
               <ul>
                 <li><b>Tell your story. But why?</b> To begin with, build up a story. Make the transition from formal to friendly, making the investors relatable and connected to your content. Use visual cues to help them imagine the problem and the solutions. </li>
                 <li>Put your investors in the customer’s shoes. Be clear on defining and targeting customers, and bring investors' attention to what you have available as a possible and effective solution.</li>
@@ -34,7 +34,7 @@ function Probleminfo() {
                 <li>Visualize your research efforts in exploring and validating the problem.</li>
                 <li>Validate your statement with relevant data.</li>
               </ul>
-              <h4>Don't do this</h4>
+              <h2>Don't do this</h2>
                 <p>Bring in the customer’s problem areas and perspectives in your pitch desk presentation. Focus on making it relatable and convincing to the investors.</p>
                 <ul>
                     <li>Remember, you do not need to explain the features of the product. Concentrate on the issues and solutions that customers are looking for.</li>

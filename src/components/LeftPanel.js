@@ -12,11 +12,7 @@ function LeftPanel({panel}) {
               <LeftLinks name='Download Pitch deck' path='/download-pitchdeck' />
                 }
 
-              {panel=== "use" ?
-              <LeftLinks name='How to use template?' path='/how-to-design-problem-slide' active='true' />
-              :
-              <LeftLinks name='How to use template?' path='/how-to-design-problem-slide' />
-                }
+              
       </ul>          
       <h4>MAIN SLIDES</h4>
         <ul style = {{ listStyle : 'none' }}>

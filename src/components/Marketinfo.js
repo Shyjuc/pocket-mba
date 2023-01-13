@@ -22,7 +22,7 @@ function Tractioninfo() {
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
               <img src={marketslide} class="img-fluid" alt="Market Slide"/>
-                <h4 style = {{ marginTop : 50 }}>Identify your market with clarity!</h4>
+                <h2 style = {{ marginTop : 50 }}>Identify your market with clarity!</h2>
                 <p>Check out the gap that your product can fill. In other words, find the market that is interested in filling the gap. Make a slide for that.</p>
                 <p>While making the slide, be sure to consider customer needs. It forms the market. Thus, identify the market by asking yourself these questions:</p>
                 <ul>
@@ -47,11 +47,11 @@ function Tractioninfo() {
               <p>It is really important to validate your business idea with these questions. Because, If not enough people are facing the problem, then you’re either looking at the wrong demographic or you’re not solving the right problem.</p>
               <p>Finally, when you are presenting your business idea before investors, it is important to convince them that you are well aware of the market, it's customer segments and consumer behaviour.</p>
               <p>When you are explainig about your market. You must understand these terms</p>
-              <h4>Total Addressable Market, or TAM</h4>
+              <h2>Total Addressable Market, or TAM</h2>
               <p>It is defined as the number of customers ready to use your product along with the maximum amount of money used by the customers. This number aids in getting an insight into what you can expect from your product or service in the market. TAM, due to its size, is unconcerned about competition or sales teams.</p>
-              <h4>Serviceable Available Market, or SAM</h4>
+              <h2>Serviceable Available Market, or SAM</h2>
               <p>It is a realistic market that takes your competition and your resources into account. It is calculated by taking into account the total market and the competitors you are going to face.</p>
-              <h4>Serviceable Obtainable Market, or SOM</h4>
+              <h2>Serviceable Obtainable Market, or SOM</h2>
               <p>It brings a realistic picture of the market area that you can capture in the coming 3–5 years. It is calculated taking into account the competition, market strategy, pricing plans, and other variables.</p>
               <h4>Usual Practices</h4>
                 <ul>

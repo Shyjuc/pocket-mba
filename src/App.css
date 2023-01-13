@@ -56,7 +56,17 @@ body {
 }
 
 p {
-  font-size: 16px !important;
+  font-size: 18px !important;
+  line-height: 30px !important;
+}
+
+ul {
+  font-size: 18px !important;
+  line-height: 30px !important;
+}
+
+h2 {
+  font-size: 30px !important;
 }
 
 @keyframes App-logo-spin {

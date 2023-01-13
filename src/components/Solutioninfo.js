@@ -26,14 +26,14 @@ function Solutioninfo() {
               <p>Most founders don’t get this. They are blind to it. The solution slide is the most important part of not only your pitch, but your business as well. Identifying and presenting the solution can make a world of difference in developing a business concept.</p>
               <p>Once the problem is solved, it’s high time for a viable solution. This slide is meant to make the investor learn about the solution to the problem stated and why you and your team are the best choice for this. On this slide, you need to elaborate yourself. Simply wow your audience, i.e., investors, and make them believe in your business. This slide will decide whether the investors will stay back for further slides or remove it</p>
               <p>Through this slide, your knowledge, business approach, and confidence will be observed. How you identify the solution and how you present it will create a lasting impact on the investors.</p>
-              <h4>Best practices</h4>
+              <h2>Best practices</h2>
               <ul>
               <li>Make it clear how you will solve the problem.</li>
               <li>Elaborate in a few sentences how you worked on the solution.</li>
               <li>In a few sentences, describe the steps involved.</li>
               <li>Instead of labeling the features, discuss the benefits of the features of the solution.</li>
               </ul>
-              <h4>Don't do this</h4>
+              <h2>Don't do this</h2>
                 <p>Make the content relatable and convincing. Instead of promoting your product, talk about how it is related to the problem stated. Focus on highlighting the benefits of the solutions. Be strict about what and how much you explain about features.</p>
                 <ul>
                     <li>Don’t make the mistake of speaking of a solution that is not relevant to the problem.</li>
