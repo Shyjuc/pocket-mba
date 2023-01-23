@@ -21,7 +21,7 @@ function Probleminfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-            <img src={problemslide} class="img-fluid" alt="Problem Slide"/>
+            <img src={problemslide} class="img-fluid article_cover" alt="Problem Slide"/>
               <p style = {{ marginTop : 50 }}>How do you identify a customer problem, When you are planning to go ahead with a potential business idea?</p>
               <p>This is the real starting point. Successful businessmen identify this scenario and respond quickly with their solution. Everything you build up as a strategic business plan is originated at this critical stage. So don’t rush to identify a market opportunity with a minimal understanding about your customer problem and its available solutions.</p>
               <p>Your problem slide should express deep understanding about customer’s pain points and its existing solutions. It should be easily relatable, anyone could understand in simple words. </p>

@@ -21,7 +21,7 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <img src={tractionslide} class="img-fluid" alt="Traction Slide"/>
+              <img src={tractionslide} class="img-fluid article_cover" alt="Traction Slide"/>
               <p style = {{ marginTop : 50 }}>Known as the "killer slide" in your pitch deck, it shows the investors what you have achieved so far. This makes a significant difference when displayed as a line graph. Remember that the larger, the steeper, the better option for displaying the metrics. Thus, visualize it thoroughly.</p>
               <p>Traction implies consistent users and the opportunity to make money. Generally, a company gets traction when it gets customers and revenue. Running a business works like an engine that, when in gear, creates forward momentum. When there is no traction, there is no momentum.</p>
               <h2>How to gain traction?</h2>

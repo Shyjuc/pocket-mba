@@ -21,7 +21,7 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-              <img src={marketslide} class="img-fluid" alt="Market Slide"/>
+              <img src={marketslide} class="img-fluid article_cover" alt="Market Slide"/>
                 <h2 style = {{ marginTop : 50 }}>Identify your market with clarity!</h2>
                 <p>Check out the gap that your product can fill. In other words, find the market that is interested in filling the gap. Make a slide for that.</p>
                 <p>While making the slide, be sure to consider customer needs. It forms the market. Thus, identify the market by asking yourself these questions:</p>

@@ -23,7 +23,7 @@ function Tractioninfo() {
         <div className="row content">
         <div className="col-xl-12 col-md-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div>
-            <img src={bmodelslide} class="img-fluid" alt="Business Model Slide"/>
+            <img src={bmodelslide} class="img-fluid article_cover" alt="Business Model Slide"/>
               <p style = {{ marginTop : 50 }}>This slide will notify the investors about your idea to make a profit. It will include information like products and services your company plans to sell, targeted markets, pricing strategies, and estimated expenses. A business model is based on the value proposition, which focuses on the goods and services provided by the company in comparison to competitors, as well as the reason for demand among customers or clients.
 </p>
               <p>The term business model refers to a company's plan for making a profit. It identifies the products or services the business plans to sell, its identified target market, and any anticipated expenses.</p>

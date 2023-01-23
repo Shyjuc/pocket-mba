@@ -1,12 +1,15 @@
 import React from 'react';
 import './ContactForm.css';
 import emailjs from 'emailjs-com';
-import { Form, Input, TextArea, Button } from 'semantic-ui-react';
+import Request from './Request';
+import { Form, Input, TextArea, Button, Grid } from 'semantic-ui-react';
 import Swal from 'sweetalert2';
 
-    const SERVICE_ID = "service_0l7y702";
-    const TEMPLATE_ID = "template_quojd8s";
-    const USER_ID = "VI_xb6dyab74QPnkm";
+//Service ID: service_bdyij9p
+
+    const SERVICE_ID = "service_bdyij9p";
+    const TEMPLATE_ID = "template_xf0fo5j";
+    const USER_ID = "WOwaOIEaXlaUWNvW1"; //public key
 
     const ContactForm = () => {
       const handleOnSubmit = (e) => {
@@ -29,16 +32,45 @@ import Swal from 'sweetalert2';
         e.target.reset()
       };
 
+      
+
 
   return (
     <section id="community" className="services">
       <div className="container" data-aos="fade-up">
-      <div className="section-title">
-          <h2>CONTACT US</h2>
-          <h3>#Business Plan #Investor Meeting #Startup Events</h3>
-        </div>
+        <Request />
     <div className="ContactForm">
       <Form onSubmit={handleOnSubmit}>
+
+      
+
+      <Grid columns={2} divided>
+    <Grid.Row style = {{ marginBottom : 15, marginTop : 10, padding:10 }}>
+      <Grid.Column>
+      <select name="industry" class="ui dropdown">
+        <option value="">Select your Industry</option>
+        <option value="Consultancy">Consultancy</option>
+        <option value="Edtech">Ed-tech</option>
+        <option value="Fintech">Fin-tech</option>
+        <option value="Health-tech">Health-tech</option>
+        <option value="E-Commerce">E-Commerce</option>
+      </select>
+      </Grid.Column>
+      <Grid.Column>
+      <select name="item" class="ui dropdown">
+        <option value="">I am Looking for</option>
+        <option value="deck-template">Pitch Deck template for my Startup</option>
+        <option value="create-deck">Assistance to create our Pitch deck</option>
+        <option value="Pitch deck kit">Pitch deck kit</option>
+        <option value="Founder Kit">Founder Kit</option>
+        <option value="Business Launch Kit">Business Launch Kit</option>
+      </select>
+      </Grid.Column>
+    </Grid.Row>
+    </Grid>
+
+      
+
         <Form.Field
           id='form-input-control-last-name'
           control={Input}
