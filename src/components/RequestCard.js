@@ -4,7 +4,7 @@ function RequestCard(props) {
   return (
         <div class="card" style = {{ margin : 15 }}>
     <div class="image">
-      <img src={props.img} />
+      <img alt={props.name} src={props.img} />
     </div>
     <div class="content">
       <div class="header">{props.name}</div>
